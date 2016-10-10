@@ -6,7 +6,6 @@
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="assets/js/script.js"></script>
-
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
     </head>
@@ -99,6 +98,8 @@
                         תשובות ותאומים למיון או בכל נושא אחר הקשור לגיוסך יש לפנות למיטב בלבד באמצעות הדרכים המופיעות באתר ובזימון.<br/>
                         <br/>בהצלחה!
                     
+                    
+                    
                     </p>
                 </div>
                 <div class="step step1">
@@ -120,11 +121,13 @@
                         <div class="description">
                             תמונה אישית <div class="tip">(עד 5 MB)</div>
                         </div>
-                        <div class="button">
-                            <button type="button">
-                                <img src="assets/img/cloud-upload.png" class="icon"> העלאת תמונה
-                            </button>
-                        </div>
+                        <label for="file-upload" class="custom-file-upload">
+                            <i class="fa fa-cloud-upload"></i>
+                            העלאת תמונה
+						
+                        
+                        </label>
+                        <input id="file-upload" type="file"/>
                     </div>
                     <div class="input">
                         <div class="description">תעודת זהות
@@ -136,29 +139,26 @@
                     <div class="input">
                         <div class="description">תאריך לידה
                         </div>
-                        <select class="years">
-                        </select>
-                        <select class="months">
-                        </select>
-                        <select class="days">
-                        </select>
+                        <select class="years"></select>
+                        <select class="months"></select>
+                        <select class="days"></select>
                     </div>
                     <div class="input">
                         <div class="description">תאריך עלייה
                         </div>
-                        <select class="years">
-                        </select>
-                        <select class="months">
-                        </select>
-                        <select class="days">
-                        </select>
+                        <select class="years"></select>
+                        <select class="months"></select>
+                        <select class="days"></select>
                     </div>
                     <div class="input">
                         <div class="description">מין
                         </div>
                         <div class="checkboxes">
-                            <input class="checkbox" type="radio" name="gender" value="male">זכר
+                            <input class="checkbox" type="radio" name="gender" value="male">
+                            זכר
   							<input class="checkbox" type="radio" name="gender" value="female">נקבה
+                        
+                        
                         </div>
                     </div>
                     <div class="input">
@@ -171,8 +171,7 @@
                     <div class="input">
                         <div class="description">אזרחות
                         </div>
-                        <select class="citizenships">
-                        </select>
+                        <select class="citizenships"></select>
                     </div>
                     <div class="input inline-block">
                         <div class="description">רחוב</div>
@@ -186,7 +185,7 @@
                             <input type="text" name="street-number">
                         </div>
                     </div>
-                    <br />
+                    <br/>
                     <div class="input inline-block">
                         <div class="description">עיר</div>
                         <div class="textinput">
@@ -214,24 +213,45 @@
                         </div>
                     </div>
                 </div>
-                <div class="step step2">2
-			</div>
+                <div class="step step2">
+					<h2>מלא\י פרטים אודות משפחתך הגרעינית</h2>
+					<div class="box">
+						<div class="input inline-block">
+							<div class="description">שם</div>
+							<div class="textinput">
+								<input type="text" name="firstname">
+							</div>
+						</div>
+						<div class="input inline-block">
+							<div class="description">גיל</div>
+							<div class="textinput">
+								<input type="text" name="firstname">
+							</div>
+						</div>
+						<div class="input inline-block">
+							<div class="description">הערות\התייחסות <div class="tip">(עד 60 תווים)</div></div>
+							<div class="textinput">
+								<input type="text" name="firstname">
+							</div>
+						</div>
+					</div>
+                </div>
                 <div class="step step3">3
-			</div>
+				</div>
                 <div class="step step4">4
-			</div>
+				</div>
                 <div class="step step5">5
-			</div>
+				</div>
                 <div class="step step6">6
-			</div>
+				</div>
                 <div class="step step7">7
-			</div>
+				</div>
                 <div class="step step8">8
-			</div>
+				</div>
                 <div class="step step9">9
-			</div>
+				</div>
                 <div class="step step10">10
-			</div>
+				</div>
                 <div class="buttons">
                     <div class="button continue" id="continue">המשך</div>
                     <div class="button back" id="back">חזרה</div>
