@@ -1,0 +1,14 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      C:\Program Files (x86)\nodejs\node.exe C:\Users\yehuda_awesome\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve -o localhost -p 80
+[debug] CLI Version:  3.0.8
+[debug] Platform:     win32
+[debug] Node Version: v4.6.0
+[debug] Time:         Mon Oct 10 2016 11:20:03 GMT+0300 (Jerusalem Daylight Time)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Starting Firebase development server...
+[info] 
+[info] Project Directory: C:\Users\yehuda_awesome\Desktop\MyNinjaWay\hasrata\hasrata
+[info] Public Directory: public
+[info] 
+[info] Server listening at: http://localhost:80

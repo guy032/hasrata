@@ -220,3 +220,36 @@ body {
 .content .step0 {
 	display: block;
 }
+
+.input {
+	margin-bottom: 20px;
+}
+
+.inline-block {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.tip {
+	display: inline;
+    font-size: 11px;
+    font-style: italic;
+}
+
+button {
+	cursor: pointer;
+}
+
+.icon {
+	width: 19px;
+    vertical-align: middle;
+}
+
+input {
+	height: 20px;
+}
+
+.checkbox {
+	vertical-align: middle;
+	margin-right: 0;
+}
