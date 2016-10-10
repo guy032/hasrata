@@ -1,0 +1,222 @@
+@font-face {
+	font-family: 'Conv_NarkisBlock-Bold';
+	src: url('fonts/NarkisBlock-Bold.eot');
+	src: local('☺'), url('fonts/NarkisBlock-Bold.woff') format('woff'), url('fonts/NarkisBlock-Bold.ttf') format('truetype'), url('fonts/NarkisBlock-Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_NarkisBlock-Medium';
+	src: url('fonts/NarkisBlock-Medium.eot');
+	src: local('☺'), url('fonts/NarkisBlock-Medium.woff') format('woff'), url('fonts/NarkisBlock-Medium.ttf') format('truetype'), url('fonts/NarkisBlock-Medium.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_NarkisBlockThin-Regular';
+	src: url('fonts/NarkisBlockThin-Regular.eot');
+	src: local('☺'), url('fonts/NarkisBlockThin-Regular.woff') format('woff'), url('fonts/NarkisBlockThin-Regular.ttf') format('truetype'), url('fonts/NarkisBlockThin-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Conv_NarkisBlockThin-Regular', arial;
+	direction: rtl;
+}
+
+body {
+	background: url(../img/bg.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.container {
+    margin: auto;
+    width: 800px;
+    background-color: white;
+    box-shadow: 1px 1px 5px black;
+    margin-top: 50px;
+}
+
+.top-bg {
+	background-color: #2c325a;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	color: white;
+	line-height: 100px;
+}
+
+.banner {
+	height: 20px;
+	width: 100%;
+	background: url(../img/banner.jpg) no-repeat; 
+}
+
+.logo {
+	width: 50px;
+    height: 80px;
+    display: inline-block;
+    position: relative;
+    float: right;
+    padding-right: 30px;
+    padding-top: 10px;
+}
+
+.title {
+	font-size: 37px;
+	display: inline-block;
+	vertical-align: top;
+	font-family: 'Conv_NarkisBlock-Bold';
+	margin-right: -80px;
+}
+
+.progress-line {
+	margin: 0px 42px;
+    color: #949594;
+    position: relative;
+    margin-top: 70px;
+}
+
+.progress-line .circle {
+	background-color: #949594;
+	color: white;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 25px;
+    display: inline-block;
+    margin: -6px;
+}
+
+.progress-line .line.colored .circle, .progress-line .line.colored .connector {
+	background-color: #514f4f;
+}
+
+.progress-line .line.colored .img {
+	color: #514f4f;
+}
+
+.progress-line .connector {
+	background-color: #949594;
+	width: 50px;
+	height: 8px;
+	display: inline-block;
+}
+
+.progress-line .img {
+    padding-bottom: 15px;
+    position: absolute;
+    bottom: 18px;
+}
+
+.progress-line .line {
+	display: inline-block;
+}
+
+.progress-line .line.colored .img.icon2 {
+	background: url(../img/family-black.png) no-repeat;
+	background-size: contain;
+}
+
+.progress-line .line.colored .img.icon8 {
+	background: url(../img/script1-black.png) no-repeat;
+	background-size: contain;
+}
+
+.progress-line .line.colored .img.icon9 {
+	background: url(../img/script2-black.png) no-repeat;
+	background-size: contain;
+}
+
+.img.icon1 {right: -2px;}
+.img.icon2 {
+	right: 61px;
+	background: url(../img/family-grey.png) no-repeat;
+	background-size: contain;
+	width: 50px;
+	height: 40px;
+}
+.img.icon3 {right: 145px;}
+.img.icon4 {right: 215px;}
+.img.icon5 {right: 298px;}
+.img.icon6 {right: 371px;}
+.img.icon7 {right: 448px;}
+.img.icon8 {
+	right: 523px;
+	background: url(../img/script1-grey.png) no-repeat;
+	background-size: contain;
+	width: 30px;
+	height: 32px;
+}
+.img.icon9 {
+	right: 598px;
+	background: url(../img/script2-grey.png) no-repeat;
+	background-size: contain;
+	width: 32px;
+	height: 35px;
+}
+.img.icon10 {right: 675px;}
+
+.content {
+    padding: 25px 40px;
+    font-size: 15px;
+}
+
+.content h2 {
+	font-family: 'Conv_NarkisBlock-Medium';
+}
+
+.buttons {
+    padding-top: 30px;
+    padding-bottom: 25px;
+}
+
+.buttons .button {
+	background-color: #f5f5f5;
+	font-weight: bold;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border: 1px solid #676767;
+	border-radius: 4px;
+	font-family: 'Conv_NarkisBlock-Bold';
+	cursor: pointer;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Chrome/Safari/Opera */
+	-khtml-user-select: none;    /* Konqueror */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* Internet Explorer/Edge */
+	user-select: none;           /* Non-prefixed version, currently
+	                              not supported by any browser */
+}
+
+.buttons .button:hover {
+	background-color: #a9d1eb;
+}
+
+.buttons .continue {
+    float: left;
+}
+
+.buttons .back {
+    float: right;
+    display: none;
+}
+
+.content .step {
+	display: none;
+}
+
+.content .step0 {
+	display: block;
+}
