@@ -1,3 +1,13 @@
+var config = {
+	apiKey: "AIzaSyD5fjRuASD9ZrjZgX315vnDga0pb5DJZ_s",
+	authDomain: "hasrata-724e7.firebaseapp.com",
+	databaseURL: "https://hasrata-724e7.firebaseio.com",
+	storageBucket: "hasrata-724e7.appspot.com",
+	messagingSenderId: "473676323598"
+};
+firebase.initializeApp(config);
+var storageRef = firebase.storage().ref();
+
 $(document).ready(function() {
 	$(".buttons .button").click(function() {
 		id = $(this).attr("id")
@@ -49,3 +59,10 @@ $(document).ready(function() {
 		$('.citizenships').append('<option value="' + i + '">' + citizenships[i-1] + '</option>');
 	}
 })
+
+function getFileContent(input) {
+	var file = input[0].files[0];
+	storageRef.child('files/'+file.name).put(file).then(function(snapshot) {
+		console.log('Uploaded a blob or file!');
+	});
+}
