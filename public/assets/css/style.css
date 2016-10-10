@@ -37,6 +37,11 @@ body {
 	background-size: cover;
 }
 
+.starttext {
+	font-size: 18px;
+	font-family: 'Assistant';
+}
+
 .container {
     margin: auto;
     width: 800px;
@@ -95,6 +100,7 @@ body {
     border-radius: 25px;
     display: inline-block;
     margin: -6px;
+    font-size: 21px;
 }
 
 .progress-line .line.colored .circle, .progress-line .line.colored .connector {
@@ -173,6 +179,7 @@ body {
 
 .content h2 {
 	font-family: 'Conv_NarkisBlock-Medium';
+	font-size: 25px;
 }
 
 .buttons {
@@ -252,4 +259,19 @@ input {
 .checkbox {
 	vertical-align: middle;
 	margin-right: 0;
+}
+
+.description {
+	font-family: 'Assistant';
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.checkboxes {
+	font-size: 16px;
+}
+
+select {
+	height: 20px;
+    font-size: 15px;
 }
