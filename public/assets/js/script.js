@@ -30,7 +30,7 @@ $(document).ready(function() {
 			}
 		}
 
-		if(newStep > 1)
+		if(newStep > 0)
 			$(".buttons .back").show()
 		else
 			$(".buttons .back").hide()
