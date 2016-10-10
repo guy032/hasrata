@@ -213,3 +213,6 @@ pip-log.txt
 
 # Personal Enteries
 *.log
+.log
+firebase-debug
+firebase-debug.log
