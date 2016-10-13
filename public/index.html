@@ -98,9 +98,16 @@
                         <br/>
                         תשובות ותאומים למיון או בכל נושא אחר הקשור לגיוסך יש לפנות למיטב בלבד באמצעות הדרכים המופיעות באתר ובזימון.<br/>
                         <br/>בהצלחה!
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     </p>
-
-                    <input id="file" type="file" />
+                    <input id="file" type="file"/>
                 </div>
                 <div class="step step1">
                     <h2>מלא\י פרטים כלליים</h2>
@@ -125,6 +132,14 @@
                             <i class="fa fa-cloud-upload"></i>
                             העלאת תמונה
 						
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         </label>
                         <input id="file-upload" type="file"/>
@@ -157,6 +172,14 @@
                             <input class="checkbox" type="radio" name="gender" value="male">
                             זכר
   							<input class="checkbox" type="radio" name="gender" value="female">נקבה
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                         </div>
@@ -214,27 +237,149 @@
                     </div>
                 </div>
                 <div class="step step2">
-					<h2>מלא\י פרטים אודות משפחתך הגרעינית</h2>
-					<div class="box">
-						<div class="input inline-block">
-							<div class="description">שם</div>
-							<div class="textinput">
-								<input type="text" name="firstname">
-							</div>
-						</div>
-						<div class="input inline-block">
-							<div class="description">גיל</div>
-							<div class="textinput">
-								<input type="text" name="firstname">
-							</div>
-						</div>
-						<div class="input inline-block">
-							<div class="description">הערות\התייחסות <div class="tip">(עד 60 תווים)</div></div>
-							<div class="textinput">
-								<input type="text" name="firstname">
-							</div>
-						</div>
-					</div>
+                    <h2>מלא\י פרטים אודות משפחתך הגרעינית</h2>
+                    <div class="box">
+                        <div class="innerBox">
+                            <div class="firstEnabled">
+                                <div class="input inline-block">
+                                    <div class="description">שם</div>
+                                    <div class="textinput">
+                                        <input type="text" class="firstname" name="firstname">
+                                    </div>
+                                </div>
+                                <div class="input inline-block">
+                                    <div class="description">גיל</div>
+                                    <div class="textinput">
+                                        <input type="text" class="age" name="age">
+                                    </div>
+                                </div>
+                                <div class="input inline-block">
+                                    <div class="description">
+                                        הערות\התייחסות <div class="tip">(עד 60 תווים)</div>
+                                    </div>
+                                    <div class="textinput">
+                                        <input type="text" class="comments" name="comments">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="firstEnabled disabledTemplate">
+                                <div class="input inline-block">
+                                    <div class="textinput">
+                                        <input type="text" class="firstname" name="firstname">
+                                    </div>
+                                </div>
+                                <div class="input inline-block">
+                                    <div class="textinput">
+                                        <input type="text" class="age" name="age">
+                                    </div>
+                                </div>
+                                <div class="input inline-block">
+                                    <div class="textinput">
+                                        <input type="text" class="comments" name="comments">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lastDisabled">
+                            <img class="plusIcon" onclick="AddRow()" src="assets/img/create_with_plus_mail_layer-512.png">
+                            <div class="input inline-block">
+                                <div class="textinput">
+                                    <input type="text" class="firstname" name="firstname" disabled>
+                                </div>
+                            </div>
+                            <div class="input inline-block">
+                                <div class="textinput">
+                                    <input type="text" class="age" name="age" disabled>
+                                </div>
+                            </div>
+                            <div class="input inline-block">
+                                <div class="textinput">
+                                    <input type="text" class="comments" name="comments" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>מלא\י מגבלות שירות ושיבוץ צבאי</h2>
+                    <div class="box">
+                        <div class="input inline-block innerBox2in2">
+                            <div class="textinput inline-block innerBox2in2">
+                                <div>
+                                    <div class="verticalMiddle">
+                                        <div class="innerVerticalMiddle">
+                                            <div class="description inline-block line2in2">
+                                                <input id="check1" type="checkbox" class="checkbox checkbox2in2">רפואית או בריאותית
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="twoTextInputs">
+                                    <div class="firstRow2in2">
+                                        <div class="description">
+                                            תואר המגבלה <div class="tip">(עד 60 תווים)</div>
+                                        </div>
+                                        <input type="text" class="handicap check1" name="handicap" disabled="">
+                                    </div>
+                                    <div class="firstRow2in2">
+                                        <div class="description">
+                                            תיאור מגבלת תנאי שירות <div class="tip">(עד 60 תווים)</div>
+                                        </div>
+                                        <input type="text" class="serviceHandicap check1" name="serviceHandicap" disabled="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input inline-block innerBox2in2">
+                            <div class="textinput inline-block innerBox2in2">
+                                <input id="check2" type="checkbox" class="checkbox checkbox2in2 checkboxNotFirst">
+                                <div class="description inline-block line2in2 line2in2notFirst">משפחה שכולה</div>
+                                <div class="twoTextInputs">
+                                    <input type="text" class="handicap check2" name="handicap" disabled="">
+                                    <input type="text" class="serviceHandicap check2" name="serviceHandicap" disabled="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input inline-block innerBox2in2">
+                            <div class="textinput inline-block innerBox2in2">
+                                <input id="check3" type="checkbox" class="checkbox checkbox2in2 checkboxNotFirst">
+                                <div class="description inline-block line2in2 line2in2notFirst">בן יחיד</div>
+                                <div class="twoTextInputs">
+                                    <input type="text" class="handicap check3" name="handicap" disabled="">
+                                    <input type="text" class="serviceHandicap check3" name="serviceHandicap" disabled="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input inline-block innerBox2in2">
+                            <div class="textinput inline-block innerBox2in2">
+                                <input id="check4" type="checkbox" class="checkbox checkbox2in2 checkboxNotFirst">
+                                <div class="description inline-block line2in2 line2in2notFirst">ספורטאי\מוזיקאי מצטיין</div>
+                                <div class="twoTextInputs">
+                                    <input type="text" class="handicap check4" name="handicap" disabled="">
+                                    <input type="text" class="serviceHandicap check4" name="serviceHandicap" disabled="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input inline-block innerBox2in2">
+                            <div class="textinput inline-block innerBox2in2">
+                                <input id="check5" type="checkbox" class="checkbox checkbox2in2 checkboxNotFirst">
+                                <div class="description inline-block line2in2 line2in2notFirst">בעיות כלכליות\משפחתיות</div>
+                                <div class="twoTextInputs">
+                                    <input type="text" class="handicap check5" name="handicap" disabled="">
+                                    <input type="text" class="serviceHandicap check5" name="serviceHandicap" disabled="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input inline-block innerBox2in2">
+                            <div class="textinput inline-block innerBox2in2">
+                                <input id="check6" type="checkbox" class="checkbox checkbox2in2 checkboxNotFirst">
+                                <div class="description inline-block line2in2 line2in2notFirst">אחר</div>
+                                <div class="twoTextInputs">
+                                    <input type="text" class="handicap check6" name="handicap" disabled="">
+                                    <input type="text" class="serviceHandicap check6" name="serviceHandicap" disabled="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="step step3">3
 				</div>

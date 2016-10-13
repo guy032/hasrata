@@ -66,3 +66,18 @@ function getFileContent(input) {
 		console.log('Uploaded a blob or file!');
 	});
 }
+
+function AddRow() {
+	$(".disabledTemplate").clone().appendTo(".innerBox").removeClass("disabledTemplate");;
+}
+
+$(function() {
+    $("input[type='checkbox']").change(function() {
+		if(this.checked) {
+			$("." + $(this).attr('id')).removeAttr("disabled");
+		}
+		else {
+			$("." + $(this).attr('id')).attr("disabled", "");
+		}
+    })
+})

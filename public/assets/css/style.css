@@ -290,3 +290,91 @@ input[type="file"] {
     padding: 6px 12px;
     cursor: pointer;
 }
+
+.box {
+	padding: 5px;
+    border: 1px solid grey;
+}
+
+.age {
+	width: 15px;
+}
+
+.comments {
+	width: 395px;
+}
+
+.plusIcon {
+	width: 13px;
+    left: 6px;
+    bottom: -2px;
+    position: relative;
+    cursor: pointer;
+}
+
+.firstEnabled {
+	margin-right: 30px;
+}
+
+.lastDisabled {
+	margin-right: 13px;
+}
+
+.disabledTemplate {
+	display: none;
+}
+
+.twoTextInputs {
+	width: 100%;
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.handicap {
+	width: 246px;
+    margin-left: 26px;
+}
+
+.serviceHandicap {
+	width: 246px;
+}
+
+.innerBox2in2 {
+	width: 100%;
+	display: inline-flex;
+}
+
+.line2in2 {
+	width: 140px;
+	vertical-align: middle;
+}
+
+.firstRow2in2 {
+	margin: 0;
+    text-align: center;
+}
+
+.verticalMiddle {
+	display: table;
+	height: 100%;
+	margin-top: 10px;
+}
+
+.innerVerticalMiddle {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.line2in2notFirst {
+	margin-left: 25px;
+}
+
+.checkboxNotFirst {
+}
+
+input[type="checkbox"]{
+  width: 16px; /*Desired width*/
+  height: 16px; /*Desired height*/
+  flex-grow: 0;
+  flex-shrink: 0;
+}
