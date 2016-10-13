@@ -378,3 +378,25 @@ input[type="checkbox"]{
   flex-grow: 0;
   flex-shrink: 0;
 }
+
+.secondUpload {
+	margin-top: 20px;
+}
+
+.secondUpload {
+	margin-bottom: 20px;
+}
+
+.column {
+    float: right;
+    width: 25%;
+    text-align: center;
+}
+
+.box2 {
+	display: -webkit-box;
+}
+
+.row {
+	width: 100%;
+}
