@@ -2,13 +2,18 @@
 <html>
     <head>
         <title>שאלון המיון ליחידות ההסרטה</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-        <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
-        <script type="text/javascript" src="assets/js/script.js"></script>
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.1.4/css/ion.rangeSlider.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.1.4/css/ion.rangeSlider.skinFlat.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.1.4/js/ion.rangeSlider.min.js"></script>
+        <script type="text/javascript" src="assets/js/script.js"></script>
     </head>
     <body>
         <div class="container">
@@ -556,12 +561,12 @@
                     <textarea class="questionText"></textarea>
 
                     <div class="boldQuestion">מ-1 עד 5, מה להערכתך היא רמת הכושר הגופני שלך? <div class="tip">(1=הכי נמוך, 5=הכי גבוה)</div></div>
-                    <input type="number" min="1" max="5" value ="1" />
+                    <input class="five" type="range" min="1" max="5" value ="1" />
 				</div>
                 <div class="step step7">
                     <h2>מוטיבציה</h2>
                     <div class="boldQuestion">מ-1 עד 5, עד כמה היית מעוניין/ת לשרת באחת מיחידות ההסרתה? <div class="tip">(1=הכי נמוך, 5=הכי גבוה)</div></div>
-                    <input type="number" min="1" max="5" value ="1" />
+                    <input class="five" type="range" min="1" max="5" value ="1" />
 
                     <div class="boldQuestion">ביחס לתפקידים אחרים/יחידות אחרות בהם היית רוצה לשרת בצבא, היכן מדורגות יחידות ההסרטה?</div>
                     <div class="checkboxes">
@@ -591,98 +596,97 @@
 				</div>
                 <div class="step step8">
                     <h2>דרג\י את הידע המקצועי שלך</h2>
-                    <div class="description">תוכנות\ציוד מקצועי בהם אני משתמש</div>
+                    <h3>תוכנות\ציוד מקצועי בהם אני משתמש</h3>
                     <div class="box">
-                        <div class="innerBox2">
-                            <div class="firstEnabled">
-                                <div class="input inline-block">
-                                    <div class="description">תוכנה\ציוד</div>
-                                    <div class="textinput">
-                                        <input type="text" class="equipment" name="equipment">
-                                    </div>
-                                </div>
-                                <div class="input inline-block">
-                                    <div class="description">זמן שימוש\היכרות</div>
-                                    <div class="textinput">
-                                        <select class="years years2"></select>
-                                    </div>
-                                </div>
-                                <div class="input inline-block">
-                                    <div class="description">
-                                        איך למדתי <div class="tip">(עד 60 תווים)</div>
-                                    </div>
-                                    <div class="textinput">
-                                        <input type="text" class="knowledge" name="knowledge">
-                                    </div>
-                                </div>
-                                <div class="input inline-block">
-                                    <div class="description">
-                                        מה אני יודע ליישם <div class="tip">(עד 60 תווים)</div>
-                                    </div>
-                                    <div class="textinput">
-                                        <input type="text" class="practice" name="practice">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="firstEnabled disabledTemplate2">
-                                <div class="input inline-block">
-                                    <div class="textinput">
-                                        <input type="text" class="equipment" name="equipment">
-                                    </div>
-                                </div>
-                                <div class="input inline-block">
-                                    <div class="textinput">
-                                        <select class="years years2"></select>
-                                    </div>
-                                </div>
-                                <div class="input inline-block">
-                                    <div class="textinput">
-                                        <input type="text" class="knowledge" name="knowledge">
-                                    </div>
-                                </div>
-                                <div class="input inline-block">
-                                    <div class="textinput">
-                                        <input type="text" class="practice" name="practice">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lastDisabled">
-                            <img class="plusIcon" onclick="AddRow()" src="assets/img/plus.png">
-                            <div class="input inline-block">
-                                <div class="textinput">
-                                    <input type="text" class="equipment" name="equipment" disabled>
-                                </div>
-                            </div>
-                            <div class="input inline-block">
-                                <div class="textinput">
-                                    <select class="years years2" disabled></select>
-                                </div>
-                            </div>
-                            <div class="input inline-block">
-                                <div class="textinput">
-                                    <input type="text" class="knowledge" name="knowledge" disabled>
-                                </div>
-                            </div>
-                            <div class="input inline-block">
-                                <div class="textinput">
-                                    <input type="text" class="practice" name="practice" disabled>
-                                </div>
-                            </div>
+                        <div class="innerBox">
+                            <table class="addRemovePlugin">
+                                <tr>
+                                    <td></td>
+                                    <td>תוכנה/ציוד</td>
+                                    <td>זמן שימוש/היכרות</td>
+                                    <td>איך למדתי (<div class="tip">(עד 60 תווים)</div></td>
+                                    <td>מה אני יועד ליישם (<div class="tip">(עד 60 תווים)</div></td>
+                                </tr>
+                                <tr>
+                                    <td><img class="plusRemoveIcon remove" src="assets/img/remove.png"></td>
+                                    <td><input></td>
+                                    <td>
+                                        <select>
+                                            <option>חודש</option>
+                                            <option>3 חודשים</option>
+                                            <option>חצי שנה</option>
+                                            <option>שנה</option>
+                                            <option>שנתיים</option>
+                                            <option>3 שנים ומעלה</option>
+                                        </select>
+                                    </td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                </tr>
+                                <tr class="disabled">
+                                    <td><img class="plusRemoveIcon add" src="assets/img/add.png"></td>
+                                    <td><input></td>
+                                    <td>
+                                        <select>
+                                            <option>חודש</option>
+                                            <option>3 חודשים</option>
+                                            <option>חצי שנה</option>
+                                            <option>שנה</option>
+                                            <option>שנתיים</option>
+                                            <option>3 שנים ומעלה</option>
+                                        </select>
+                                    </td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
-                    <br>
-                    <br>
-                    <div class="description">מ-1 עד 10, דרג\י את רמת הידע והניסיון שלך בכל אחד מהתחןמים הבאים(1=הכי נמוך, 10=הכי גבוה)</div>
-                    <div class="input inline-block">
-                        <div class="textinput">
-                            <input type="range" style="direction: rtl" name="points" id="points" value="1" min="1" max="10" step="1" data-show-value="true">
-                        </div>
-                    </div>
+
+                    <div class="description" style="padding-top: 40px">מ-1 עד 10, דרג\י את רמת הידע והניסיון שלך בכל אחד מהתחומים הבאים (1=הכי נמוך, 10=הכי גבוה)</div>
+
+                    <div class="boldQuestion">צילום וידאו, תאורה וסאונד</div>
+                    <input type="range" min="1" max="10" value ="1" />
+
+                    <div class="boldQuestion">צילום סטילס</div>
+                    <input type="range" min="1" max="10" value ="1" />
+
+                    <div class="boldQuestion">תחקיר ותסריט</div>
+                    <input type="range" min="1" max="10" value ="1" />
+
+                    <div class="boldQuestion">עריכת וידאו</div>
+                    <input type="range" min="1" max="10" value ="1" />
+
+                    <div class="boldQuestion">גרפיקה ואנימציה</div>
+                    <input type="range" min="1" max="10" value ="1" />
+
+                    <div class="boldQuestion">הפקה</div>
+                    <input type="range" min="1" max="10" value ="1" />
+
+                    <div class="boldQuestion">רמת הידע בבניית אפליקציות לטלפונים חכמים</div>
+                    <input type="range" min="1" max="10" value ="1" />
+
+                    <div class="boldQuestion">רמת השליטה בבניית דפי אינטרנט</div>
+                    <input type="range" min="1" max="10" value ="1" />
+
+                    <div class="boldQuestion">רמת השליטה ב-HTML5</div>
+                    <input type="range" min="1" max="10" value ="1" />
+
+                    <div class="boldQuestion">רמת השליטה ברשתות FTP</div>
+                    <input type="range" min="1" max="10" value ="1" />
+
+                    <div class="boldQuestion">ידע בהקמת רשתות מחשבים</div>
+                    <input type="range" min="1" max="10" value ="1" />
                 </div>
-                <div class="step step9">9
+                <div class="step step9 center">
+                    <h2>מעלה קבצים</h2>
+                    <div class="box">
+                        <div class="innerBox">
+                        </div>
+                    </div>
 				</div>
-                <div class="step step10">10
+                <div class="step step10 center">
+                    <h2>תודה!</h2>
 				</div>
                 <div class="buttons">
                     <div class="button continue" id="continue">המשך</div>

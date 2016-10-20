@@ -14,31 +14,16 @@ $(document).ready(function() {
 		id = $(this).attr("id")
 		currentStep = Number($(".content .step:visible").attr("class").replace("step step", ""))
 		if(id == 'continue')
-			newStep = currentStep+1
+			x = currentStep+1
 		else
-			newStep = currentStep-1
-		
-		$(".content .step").hide()
-		$(".content .step"+newStep).show()
+			x = currentStep-1
 
+		changeStep(x)
+	})
 
-		for(i=1; i<=10; i++) {
-			$(".line").removeClass("colored")
-		}
-		if(newStep >= 1) {
-			for(i=1; i<=newStep; i++) {
-				$(".line"+i).addClass("colored")
-			}
-		}
-
-		if(newStep > 0)
-			$(".buttons .back").show()
-		else
-			$(".buttons .back").hide()
-		if(newStep < 10)
-			$(".buttons .continue").show()
-		else
-			$(".buttons .continue").hide()
+	$(document).on('click', '.colored', function() {
+		number = Number($(this).find(".img").attr('class').replace('img icon', ''))
+		changeStep(number)
 	})
 
 	for(i = 1; i <= 31; i++) {
@@ -118,6 +103,23 @@ $(document).ready(function() {
 	$(document).on('click', '.addRemovePlugin .remove', function() {
 		$(this).closest("tr").remove()
 	})
+
+	$("input[type='range']:not(.five)").ionRangeSlider({
+        type: "single",
+        grid: true,
+        min: 1,
+        max: 10,
+        step: 1,
+		values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    })
+    $("input[type='range'].five").ionRangeSlider({
+        type: "single",
+        grid: true,
+        min: 1,
+        max: 5,
+        step: 1,
+		values: [1, 2, 3, 4, 5]
+    })
 })
 
 function getFileContent(input) {
@@ -145,4 +147,27 @@ function getLanguagesOptions() {
 		output += '<option value="'+languages[i]+'">' + languages[i] + '</option>';
 	}
 	return output
+}
+
+function changeStep(x) {
+	for(i=1; i<=10; i++) {
+		$(".line").removeClass("colored")
+	}
+	if(x >= 1) {
+		for(i=1; i<=x; i++) {
+			$(".line"+i).addClass("colored")
+		}
+	}
+
+	if(x > 0)
+		$(".buttons .back").show()
+	else
+		$(".buttons .back").hide()
+	if(x < 9)
+		$(".buttons .continue").show()
+	else
+		$(".buttons .continue").hide()
+
+	$(".content .step").hide()
+	$(".content .step"+x).show()
 }

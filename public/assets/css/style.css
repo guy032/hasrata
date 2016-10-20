@@ -1,7 +1,7 @@
 /*.step {
     display: none !important;
 }
-.step7 {
+.step9 {
     display: block !important;
 }*/
 
@@ -107,6 +107,10 @@ body {
     display: inline-block;
     margin: -6px;
     font-size: 21px;
+}
+
+.progress-line .line.colored {
+	cursor: pointer;
 }
 
 .progress-line .line.colored .circle, .progress-line .line.colored .connector {
@@ -268,10 +272,6 @@ body {
     font-family: arial;
 }
 
-.description {
-	font-family: 'Conv_NarkisBlock-Medium';
-}
-
 button {
 	cursor: pointer;
 }
@@ -293,9 +293,9 @@ input {
 }
 
 .description {
-	font-family: 'Assistant';
+	font-family: 'Conv_NarkisBlock-Medium';
     font-weight: bold;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .checkboxes {
@@ -335,7 +335,7 @@ input[type="file"] {
 }
 
 .plusRemoveIcon {
-	width: 12px;
+	width: 15px;
     position: relative;
     cursor: pointer;
 }
@@ -465,4 +465,16 @@ textarea.questionText {
     font-weight: bold;
     font-family: arial;
     padding-top: 15px;
+}
+
+.irs-slider {
+	cursor: pointer;
+}
+
+.irs * {
+    font-size: 14px !important;
+}
+
+.step.center {
+	text-align: center;
 }
