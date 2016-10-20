@@ -324,6 +324,10 @@ input[type="file"] {
 	display: none;
 }
 
+.disabledTemplate2 {
+	display: none;
+}
+
 .twoTextInputs {
 	width: 100%;
     display: flex;
@@ -399,4 +403,13 @@ input[type="checkbox"]{
 
 .row {
 	width: 100%;
+}
+
+.equipment {
+	width: 126px;
+}
+
+.years2 {
+	width: 99px;
+	height: 30px;
 }

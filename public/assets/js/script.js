@@ -68,7 +68,8 @@ function getFileContent(input) {
 }
 
 function AddRow() {
-	$(".disabledTemplate").clone().appendTo(".innerBox").removeClass("disabledTemplate");;
+	$(".disabledTemplate").clone().appendTo(".innerBox").removeClass("disabledTemplate");
+	$(".disabledTemplate2").clone().appendTo(".innerBox2").removeClass("disabledTemplate2");
 }
 
 $(function() {
