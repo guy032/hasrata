@@ -51,12 +51,17 @@ $(document).ready(function() {
 	}
 
 	$('.years').append(getYearsOptions())
+	$('.languages').append(getLanguagesOptions())
+
+	$('.languages.english').val('אנגלית')
+	$('.languages.arabic').val('ערבית')
+	$('.languages.french').val('צרפתית')
 
 	var citizenships = ["אוקראינית","איטלקית","אנגלית","אפריקנס","בולגרית","גרמנית","הונגרית","הינדי","יידיש","נורווגית","סינית","סלובקית","ספרדית","עברית","ערבית","פולנית","פורטוגזית","צרפתית","רומנית","רוסית","אמהרית","ארמנית","גאורגית","דנית","הולנדית","יוונית","יפנית","לאדינו","לטבית","לטינית","ליטאית","מנדרינית","סרבית","פלמית","פרסית","צ'כית","קרואטית","שוודית"];
 	for(i = 1; i <= citizenships.length; i++) {
 		$('.citizenships').append('<option value="' + i + '">' + citizenships[i-1] + '</option>');
 	}
-	
+
     $("input[type='checkbox']").change(function() {
 		if(this.checked) {
 			$("." + $(this).attr('id')).removeAttr("disabled");
@@ -105,7 +110,9 @@ $(document).ready(function() {
 	$(document).on('click', '.addRemovePlugin .disabled .add', function() {
 		$(this).closest(".addRemovePlugin").append($(this).closest('.disabled').clone().addClass('new'))
 		$(this).closest('.addRemovePlugin').find('.disabled:not(.new)').removeClass('disabled').find(".plusRemoveIcon").addClass('remove').removeClass('add').attr('src', 'assets/img/remove.png')		
-		$(this).closest('.addRemovePlugin').find('.new').removeClass('new')
+		newTr = $(this).closest('.addRemovePlugin').find('.new').removeClass('new')
+		newTr.find('input').attr('name', newTr.find('input').attr('name').split('_')[0] + (Number(newTr.find('input').attr('name').split('_')[1]) + 1))
+
 	})
 
 	$(document).on('click', '.addRemovePlugin .remove', function() {
@@ -125,6 +132,17 @@ function getYearsOptions() {
 	output = ''
 	for(i = year; i >= year - 30; i--) {
 		output += '<option value="' + i + '">' + i + '</option>';
+	}
+	return output
+}
+
+function getLanguagesOptions() {
+	var year = new Date().getFullYear(),
+		output = '',
+		languages = ["אוקראינית","איטלקית","אנגלית","אפריקנס","בולגרית","גרמנית","הונגרית","הינדי","יידיש","נורווגית","סינית","סלובקית","ספרדית","עברית","ערבית","פולנית","פורטוגזית","צרפתית","רומנית","רוסית","אמהרית","ארמנית","גאורגית","דנית","הולנדית","יוונית","יפנית","לאדינו","לטבית","לטינית","ליטאית","מנדרינית","סרבית","פלמית","פרסית","צ'כית","קרואטית","שוודית"]
+
+	for(i=0; i<languages.length; i++) {
+		output += '<option value="'+languages[i]+'">' + languages[i] + '</option>';
 	}
 	return output
 }

@@ -1,7 +1,7 @@
 /*.step {
     display: none !important;
 }
-.step4 {
+.step7 {
     display: block !important;
 }*/
 
@@ -239,8 +239,21 @@ body {
 	margin-bottom: 20px;
 }
 
+.addRemovePlugin {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
 .addRemovePlugin input {
 	width: 120px;
+}
+
+.step5 .addRemovePlugin * {
+	text-align: right;
 }
 
 .inline-block {
@@ -307,10 +320,6 @@ input[type="file"] {
 .box {
 	padding: 5px;
     border: 1px solid grey;
-}
-
-.box table {
-	width: 100%;
 }
 
 .box table td {
@@ -424,7 +433,7 @@ input[type="checkbox"]{
 	width: 100%;
 }
 
-tr.disabled input {
+tr.disabled input, tr.disabled select {
     background: #c9c8c7;
     pointer-events: none;
 }
@@ -449,4 +458,11 @@ textarea.questionText {
 .years2 {
 	width: 99px;
 	height: 30px;
+}
+
+.maxSizeNote {
+    font-size: 23px;
+    font-weight: bold;
+    font-family: arial;
+    padding-top: 15px;
 }
