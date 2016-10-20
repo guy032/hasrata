@@ -225,63 +225,26 @@
                     <h2>מלא\י פרטים אודות משפחתך הגרעינית</h2>
                     <div class="box">
                         <div class="innerBox">
-                            <div class="firstEnabled">
-                                <div class="input inline-block">
-                                    <div class="description">שם</div>
-                                    <div class="textinput">
-                                        <input type="text" class="firstname" name="firstname">
-                                    </div>
-                                </div>
-                                <div class="input inline-block">
-                                    <div class="description">גיל</div>
-                                    <div class="textinput">
-                                        <input type="text" class="age" name="age">
-                                    </div>
-                                </div>
-                                <div class="input inline-block">
-                                    <div class="description">
-                                        הערות\התייחסות <div class="tip">(עד 60 תווים)</div>
-                                    </div>
-                                    <div class="textinput">
-                                        <input type="text" class="comments" name="comments">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="firstEnabled disabledTemplate">
-                                <div class="input inline-block">
-                                    <div class="textinput">
-                                        <input type="text" class="firstname" name="firstname">
-                                    </div>
-                                </div>
-                                <div class="input inline-block">
-                                    <div class="textinput">
-                                        <input type="text" class="age" name="age">
-                                    </div>
-                                </div>
-                                <div class="input inline-block">
-                                    <div class="textinput">
-                                        <input type="text" class="comments" name="comments">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lastDisabled">
-                            <img class="plusIcon" onclick="AddRow()" src="assets/img/create_with_plus_mail_layer-512.png">
-                            <div class="input inline-block">
-                                <div class="textinput">
-                                    <input type="text" class="firstname" name="firstname" disabled>
-                                </div>
-                            </div>
-                            <div class="input inline-block">
-                                <div class="textinput">
-                                    <input type="text" class="age" name="age" disabled>
-                                </div>
-                            </div>
-                            <div class="input inline-block">
-                                <div class="textinput">
-                                    <input type="text" class="comments" name="comments" disabled>
-                                </div>
-                            </div>
+                            <table class="addRemovePlugin">
+                                <tr>
+                                    <td></td>
+                                    <td>שם</td>
+                                    <td>גיל</td>
+                                    <td>הערות\התייחסות <div class="tip">(עד 60 תווים)</div></td>
+                                </tr>
+                                <tr>
+                                    <td><img class="plusRemoveIcon remove" src="assets/img/remove.png"></td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                </tr>
+                                <tr class="disabled">
+                                    <td><img class="plusRemoveIcon add" src="assets/img/add.png"></td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                     <h2>מלא\י מגבלות שירות ושיבוץ צבאי</h2>
@@ -392,20 +355,140 @@
                     </div>
                     <label for="file-upload2" class="custom-file-upload secondUpload">
                         <i class="fa fa-cloud-upload"></i>
-                        העלאת קבצים  
-                        
+                        העלאת קבצים
                     </label>
-                    <input multiple id="file-upload2" type="file"/>
+                    <input id="file-upload2" type="file" accept=".mp4,.mov,.jpg,.pdf" multiple />
                     <div class="box box2">
-                        <div class="row">
-                            <div class="column">קובץ</div>
-                            <div class="column">מדיה</div>
-                            <div class="column">שם עבודה, שנה ופרטיים כללים</div>
-                            <div class="column">תפקיד שביצעתי\תרומתי לעבודה</div>
+                        <table class="files_form3">
+                            <tr class="th">
+                                <td></td>
+                                <td>קובץ</td>
+                                <td>מדיה</td>
+                                <td>שם עבודה, שנה ופרטיים כללים</td>
+                                <td>תפקיד שביצעתי\תרומתי לעבודה</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <h2>בחר שני תחומים</h2>
+                    <div class="boldQuestion">אם תתקבל/י לאחת מהיחידות, באילו שניים מהתחומים הבאים היית הכי רוצה לעסוק?</div>
+                    <input type="checkbox" name="2units" value="">צילום וידאו (כולל תאורת וסאונד)<br>
+                    <input type="checkbox" name="2units" value="">צילום סטילס<br>
+                    <input type="checkbox" name="2units" value="">תסריטאות ותחקיר<br>
+                    <input type="checkbox" name="2units" value="">הפקה<br>
+                    <input type="checkbox" name="2units" value="">עריכת וידאו<br>
+                    <input type="checkbox" name="2units" value="">גרפיקה ואנימציה
+                </div>
+                <div class="step step4">
+                    <h2>מלא/י פרטי השכלה תיכונית</h2>
+                    <h3>בית ספר</h3>
+                    <div class="box">
+                        <div class="innerBox">
+                            <table class="addRemovePlugin">
+                                <tr>
+                                    <td></td>
+                                    <td>שם</td>
+                                    <td>עיר</td>
+                                    <td>משנה</td>
+                                    <td>עד שנה</td>
+                                    <td>סיבת עזיבה <div class="tip">(עד 60 תווים)</div></td>
+                                </tr>
+                                <tr>
+                                    <td><img class="plusRemoveIcon remove" src="assets/img/remove.png"></td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                    <td><select class="years"></select></td>
+                                    <td><select class="years"></select></td>
+                                    <td><input></td>
+                                </tr>
+                                <tr class="disabled">
+                                    <td><img class="plusRemoveIcon add" src="assets/img/add.png"></td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                    <td><select class="years"></select></td>
+                                    <td><select class="years"></select></td>
+                                    <td><input></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
-                </div>
-                <div class="step step4">4
+                    <h3>ציוני מקצועות התקשורת</h3>
+                    <div class="box">
+                        <div class="innerBox">
+                            <table class="addRemovePlugin">
+                                <tr>
+                                    <td></td>
+                                    <td>מקצוע</td>
+                                    <td>מספר יחידות</td>
+                                    <td>ציון</td>
+                                    <td>הערות <div class="tip">(האם זהו ציון בגרות, ציון הגשה לבגרות או ציון סוף שנה)</div></td>
+                                </tr>
+                                <tr>
+                                    <td><img class="plusRemoveIcon remove" src="assets/img/remove.png"></td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                </tr>
+                                <tr class="disabled">
+                                    <td><img class="plusRemoveIcon add" src="assets/img/add.png"></td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <h3>ציון מקצועות נוספים של 5 יחידות ומעלה</h3>
+                    <div class="box">
+                        <div class="innerBox">
+                            <table class="addRemovePlugin">
+                                <tr>
+                                    <td></td>
+                                    <td>מקצוע</td>
+                                    <td>מספר יחידות</td>
+                                    <td>ציון</td>
+                                    <td>הערות <div class="tip">(האם זהו ציון בגרות, ציון הגשה לבגרות או ציון סוף שנה)</div></td>
+                                </tr>
+                                <tr>
+                                    <td><img class="plusRemoveIcon remove" src="assets/img/remove.png"></td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                </tr>
+                                <tr class="disabled">
+                                    <td><img class="plusRemoveIcon add" src="assets/img/add.png"></td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                    <td><input></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <h2>אתגרים וחוזקות בתחום הלמידה</h2>
+                    <div class="boldQuestion">ככל הנראה, האם תסיים/י את התיכון עם תעודת בגרות מלאה?</div>
+                    <div class="radioLine">
+                        <input type="radio" name="bagrut" value="yes"> כן
+                        <input type="radio" name="bagrut" value="no"> לא
+                    </div>
+                    <div class="boldQuestion">כתוב/י מהו ממוצע הציונים שלך בתעודת הסיום של שנת הלימודים הקודמת</div>
+                    <input type="number" name="scoreAverage" min="50" max="100">
+                    <div class="boldQuestion">האם את/ה בלימודי מכללה במסלול קולנוע וטלוויזיה (י״ג-י״ד)?</div>
+                    <div class="radioLine">
+                        <input type="radio" name="bagrut" value="no"> לא
+                        <input type="radio" name="bagrut" value="yudGimel"> י"ג
+                        <input type="radio" name="bagrut" value="yudDaled"> י"ד
+                    </div>
+                    <div class="boldQuestion">תאר את סגנון הלימוד שלך, איזה תלמיד היית? <div class="tip">(עד 240 תווים)</div></div>
+                    <textarea class="questionText"></textarea>
+
+                    <div class="boldQuestion">מה היה לך יותר קשה בבית-הספר? <div class="tip">(עד 240 תווים)</div></div>
+                    <textarea class="questionText"></textarea>
+
+                    <div class="boldQuestion">איך המחנך שלך היה מתאר אותך? <div class="tip">(עד 240 תווים)</div></div>
+                    <textarea class="questionText"></textarea>
 				</div>
                 <div class="step step5">5
 				</div>

@@ -1,3 +1,10 @@
+/*.step {
+    display: none !important;
+}
+.step4 {
+    display: block !important;
+}*/
+
 @font-face {
 	font-family: 'Conv_NarkisBlock-Bold';
 	src: url('fonts/NarkisBlock-Bold.eot');
@@ -179,6 +186,7 @@ body {
 .content h2 {
 	font-family: 'Conv_NarkisBlock-Medium';
 	font-size: 25px;
+	padding-top: 5px;
 }
 
 .buttons {
@@ -231,6 +239,10 @@ body {
 	margin-bottom: 20px;
 }
 
+.addRemovePlugin input {
+	width: 120px;
+}
+
 .inline-block {
 	display: inline-block;
 	margin-left: 10px;
@@ -238,8 +250,9 @@ body {
 
 .tip {
 	display: inline;
-    font-size: 11px;
+    font-size: 12px;
     font-style: italic;
+    font-family: arial;
 }
 
 .description {
@@ -296,6 +309,14 @@ input[type="file"] {
     border: 1px solid grey;
 }
 
+.box table {
+	width: 100%;
+}
+
+.box table td {
+	text-align: center;
+}
+
 .age {
 	width: 15px;
 }
@@ -304,10 +325,8 @@ input[type="file"] {
 	width: 395px;
 }
 
-.plusIcon {
-	width: 13px;
-    left: 6px;
-    bottom: -2px;
+.plusRemoveIcon {
+	width: 12px;
     position: relative;
     cursor: pointer;
 }
@@ -399,4 +418,22 @@ input[type="checkbox"]{
 
 .row {
 	width: 100%;
+}
+
+tr.disabled input {
+    background: #c9c8c7;
+    pointer-events: none;
+}
+
+.radioLine * {
+	display: inline-block;
+}
+
+.boldQuestion {
+    margin-top: 20px;
+}
+
+textarea.questionText {
+	width: 100%;
+    height: 75px;
 }
