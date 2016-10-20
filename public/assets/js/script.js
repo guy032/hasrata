@@ -56,7 +56,7 @@ $(document).ready(function() {
 	for(i = 1; i <= citizenships.length; i++) {
 		$('.citizenships').append('<option value="' + i + '">' + citizenships[i-1] + '</option>');
 	}
-
+	
     $("input[type='checkbox']").change(function() {
 		if(this.checked) {
 			$("." + $(this).attr('id')).removeAttr("disabled");

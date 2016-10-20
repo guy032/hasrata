@@ -98,7 +98,6 @@
                         <br/>
                         תשובות ותאומים למיון או בכל נושא אחר הקשור לגיוסך יש לפנות למיטב בלבד באמצעות הדרכים המופיעות באתר ובזימון.<br/>
                         <br/>בהצלחה!
-                    
                     </p>
                     <input id="file" type="file"/>
                 </div>
@@ -123,18 +122,7 @@
                         </div>
                         <label for="file-upload" class="custom-file-upload">
                             <i class="fa fa-cloud-upload"></i>
-                            העלאת תמונה
-						
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
+                            העלאת תמונה                        
                         </label>
                         <input id="file-upload" type="file"/>
                     </div>
@@ -163,10 +151,8 @@
                         <div class="description">מין
                         </div>
                         <div class="checkboxes">
-                            <input class="checkbox" type="radio" name="gender" value="male">
-                            זכר
-  							<input class="checkbox" type="radio" name="gender" value="female">נקבה
-                        
+                            <input class="checkbox" type="radio" name="gender" value="male"> זכר
+  							<input class="checkbox" type="radio" name="gender" value="female"> נקבה
                         </div>
                     </div>
                     <div class="input">
@@ -256,6 +242,9 @@
                                         <div class="innerVerticalMiddle">
                                             <div class="description inline-block line2in2">
                                                 <input id="check1" type="checkbox" class="checkbox checkbox2in2">רפואית או בריאותית
+                                            
+                                            
+                                            
                                             
                                             
                                             </div>
@@ -496,8 +485,97 @@
 				</div>
                 <div class="step step7">7
 				</div>
-                <div class="step step8">8
-				</div>
+                <div class="step step8">
+                    <h2>דרג\י את הידע המקצועי שלך</h2>
+                    <div class="description">תוכנות\ציוד מקצועי בהם אני משתמש</div>
+                    <div class="box">
+                        <div class="innerBox2">
+                            <div class="firstEnabled">
+                                <div class="input inline-block">
+                                    <div class="description">תוכנה\ציוד</div>
+                                    <div class="textinput">
+                                        <input type="text" class="equipment" name="equipment">
+                                    </div>
+                                </div>
+                                <div class="input inline-block">
+                                    <div class="description">זמן שימוש\היכרות</div>
+                                    <div class="textinput">
+                                        <select class="years years2"></select>
+                                    </div>
+                                </div>
+                                <div class="input inline-block">
+                                    <div class="description">
+                                        איך למדתי <div class="tip">(עד 60 תווים)</div>
+                                    </div>
+                                    <div class="textinput">
+                                        <input type="text" class="knowledge" name="knowledge">
+                                    </div>
+                                </div>
+                                <div class="input inline-block">
+                                    <div class="description">
+                                        מה אני יודע ליישם <div class="tip">(עד 60 תווים)</div>
+                                    </div>
+                                    <div class="textinput">
+                                        <input type="text" class="practice" name="practice">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="firstEnabled disabledTemplate2">
+                                <div class="input inline-block">
+                                    <div class="textinput">
+                                        <input type="text" class="equipment" name="equipment">
+                                    </div>
+                                </div>
+                                <div class="input inline-block">
+                                    <div class="textinput">
+                                        <select class="years years2"></select>
+                                    </div>
+                                </div>
+                                <div class="input inline-block">
+                                    <div class="textinput">
+                                        <input type="text" class="knowledge" name="knowledge">
+                                    </div>
+                                </div>
+                                <div class="input inline-block">
+                                    <div class="textinput">
+                                        <input type="text" class="practice" name="practice">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lastDisabled">
+                            <img class="plusIcon" onclick="AddRow()" src="assets/img/plus.png">
+                            <div class="input inline-block">
+                                <div class="textinput">
+                                    <input type="text" class="equipment" name="equipment" disabled>
+                                </div>
+                            </div>
+                            <div class="input inline-block">
+                                <div class="textinput">
+                                    <select class="years years2" disabled></select>
+                                </div>
+                            </div>
+                            <div class="input inline-block">
+                                <div class="textinput">
+                                    <input type="text" class="knowledge" name="knowledge" disabled>
+                                </div>
+                            </div>
+                            <div class="input inline-block">
+                                <div class="textinput">
+                                    <input type="text" class="practice" name="practice" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="description">מ-1 עד 10, דרג\י את רמת הידע והניסיון שלך בכל אחד מהתחןמים הבאים(1=הכי נמוך, 10=הכי גבוה)</div>
+                    <div class="input inline-block">
+                        <div class="textinput">
+                            <input type="range" style="direction: rtl" name="points" id="points" value="1" min="1" max="10" step="1" data-show-value="true">
+                        </div>
+                    </div>
+                </div>
                 <div class="step step9">9
 				</div>
                 <div class="step step10">10
