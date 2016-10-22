@@ -249,7 +249,7 @@ function sendForm() {
 		box = $(checkbox).closest(".input.innerBox2in2")
 		text = box.attr('id')
 		form['armyLimit'][text] = {}
-		$.each(box.find("input[type!='checkbox']"), function(index, input) {
+		$.each(box.find(":input[type!='checkbox']"), function(index, input) {
 			form['armyLimit'][text][$(input).attr('name')] = $(input).val()
 		})
 	})
@@ -258,26 +258,32 @@ function sendForm() {
 	$.each($("input[name='2units']:checked"), function(index, input) {
 		form['2units'].push($(input).val())
 	})
+	form['2units'] = form['2units'].join()
 
 	$.each($("input[type='radio']:checked"), function(index, input) {
+		if($(input).closest('table').length) {
+			if($(input).closest('table').attr('id') == 'languages')
+				return
+		}
 		form[$(input).attr('name')] = $(input).val()
 	})
 
 	$.each($(":input[name='alone']"), function(index, input) {
-		form[$(input).attr('id')] = $(input).val()
+		value = $(input).val()
+		if($(input).attr('max') !== undefined && $(input).attr('type') == 'range')
+			value = value + '/' + $(input).attr('max')
+		form[$(input).attr('id')] = value
 	})
 
-	$.each($(":input[type!='radio']:checked"), function(index, input) {
+	$.each($(":input[type!='radio'][name!='2units']:checked"), function(index, input) {
 		form[$(input).attr('name')] = $(input).val()
 	})
 
 	form['userImg'] = $("#userImg").val().split('/').pop().split('\\').pop()
-
 	form['uid'] = uid
-
 	delete form['undefined']
 
-	db.ref('requests/'+uid).set(form, function() {
+	db.ref('users/'+uid).set(form, function() {
 		changeStep(10)
 		console.log(form)
 	})

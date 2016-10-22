@@ -1,0 +1,71 @@
+body {
+	margin: 20px;
+	padding: 0px;
+}
+
+div.DTS div.dataTables_scrollBody {
+    background: #f1f1f1 !important;
+}
+
+.inline {
+	display: inline-block;
+}
+
+.block {
+	display: block;
+}
+
+.inline.value {
+    float: right;
+}
+
+#users tr {
+	cursor: pointer;
+}
+
+div.DTS table tbody tr:hover {
+	background-color: #7f7f7f;
+	color: white;
+}
+
+.modal.bottom-sheet {
+	max-height: 80%;
+}
+
+.btn-group, .btn-group-vertical {
+	float: left;
+	bottom: -10px;
+}
+
+.btn, .btn-large {
+	background-color: #292929;
+}
+
+.no-header th {
+	display: none;
+}
+
+div.DTS table tbody tr.selected:hover {
+	background-color: #62b1d9 !important;
+}
+
+.bottom-sheet div.dataTables_wrapper {
+    direction: rtl;
+}
+
+.bottom-sheet div.dataTables_wrapper td {
+    text-align: right;
+}
+
+/*table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable td:last-child, table.table-bordered.dataTable td:last-child {
+	border-right-width: 1px !important;
+}*/
+
+th {
+    text-align: right;
+}
+
+h5 {
+    text-align: right;
+    padding-top: 20px;
+}

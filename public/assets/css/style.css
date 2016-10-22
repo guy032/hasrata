@@ -482,6 +482,7 @@ textarea.questionText {
 div#imgName {
     display: inline-block;
     margin-right: 10px;
+    direction: ltr;
 }
 
 .box table {
