@@ -7,7 +7,10 @@ var config = {
 };
 firebase.initializeApp(config);
 var storageRef = firebase.storage().ref();
+var db = firebase.database();
+
 var debug;
+var uid = guid()
 
 $(document).ready(function() {
 	$(".buttons .button").click(function() {
@@ -44,7 +47,7 @@ $(document).ready(function() {
 
 	var citizenships = ["אוקראינית","איטלקית","אנגלית","אפריקנס","בולגרית","גרמנית","הונגרית","הינדי","יידיש","נורווגית","סינית","סלובקית","ספרדית","עברית","ערבית","פולנית","פורטוגזית","צרפתית","רומנית","רוסית","אמהרית","ארמנית","גאורגית","דנית","הולנדית","יוונית","יפנית","לאדינו","לטבית","לטינית","ליטאית","מנדרינית","סרבית","פלמית","פרסית","צ'כית","קרואטית","שוודית"];
 	for(i = 1; i <= citizenships.length; i++) {
-		$('.citizenships').append('<option value="' + i + '">' + citizenships[i-1] + '</option>');
+		$('.citizenships').append('<option value="' + citizenships[i-1] + '">' + citizenships[i-1] + '</option>');
 	}
 
     $("input[type='checkbox']").change(function() {
@@ -56,29 +59,10 @@ $(document).ready(function() {
 		}
     })
 
-	$("#file-upload2").change(function(e) {
-		var files = this.files;
-		for (var i = 0; i < files.length; i++) {
-			element = '<tr class="portfolioFile">' +
-			    		'<td class="remove"><img class="plusRemoveIcon remove" onclick="AddRow()" src="assets/img/remove.png"></td>' +
-			    		'<td>'+files[i].name+'</td>' +
-					    '<td>' +
-					        '<select>' +
-					            '<option>צילום וידאו</option>' +
-					            '<option>צילום סטילס</option>' +
-					            '<option>תסריט ותחקיר</option>' +
-					            '<option>הפקה - תיק הפקה</option>' +
-					            '<option>הפקה - קובץ וידאו</option>' +
-					            '<option>עריכת וידאו</option>' +
-					            '<option>גרפיקה</option>' +
-					            '<option>אנימציה</option>' +
-					        '</select>' +
-					    '</td>' +
-					    '<td><input /></td>' +
-					    '<td><input /></td>' +
-					'</tr>'
-			$(".files_form3").append(element)
-		}
+	$("#userImg").change(function(e) {
+		var file = $(this)[0].files[0]
+		if(file !== undefined)
+			$("#imgName").text(file.name)
 	});
 
 	$(document).on('click', '.files_form3 .remove', function() {
@@ -96,7 +80,9 @@ $(document).ready(function() {
 		$(this).closest(".addRemovePlugin").append($(this).closest('.disabled').clone().addClass('new'))
 		$(this).closest('.addRemovePlugin').find('.disabled:not(.new)').removeClass('disabled').find(".plusRemoveIcon").addClass('remove').removeClass('add').attr('src', 'assets/img/remove.png')		
 		newTr = $(this).closest('.addRemovePlugin').find('.new').removeClass('new')
-		newTr.find('input').attr('name', newTr.find('input').attr('name').split('_')[0] + (Number(newTr.find('input').attr('name').split('_')[1]) + 1))
+		name = newTr.find('input').attr('name')
+		if(name !== undefined)
+			newTr.find('input').attr('name', name.split('_')[0] + (Number(name.split('_')[1]) + 1))
 
 	})
 
@@ -121,13 +107,6 @@ $(document).ready(function() {
 		values: [1, 2, 3, 4, 5]
     })
 })
-
-function getFileContent(input) {
-	var file = input[0].files[0];
-	storageRef.child('files/'+file.name).put(file).then(function(snapshot) {
-		console.log('Uploaded a blob or file!');
-	});
-}
 
 function getYearsOptions() {
 	var year = new Date().getFullYear();
@@ -159,7 +138,7 @@ function changeStep(x) {
 		}
 	}
 
-	if(x > 0)
+	if(x > 0 && x < 10)
 		$(".buttons .back").show()
 	else
 		$(".buttons .back").hide()
@@ -170,4 +149,147 @@ function changeStep(x) {
 
 	$(".content .step").hide()
 	$(".content .step"+x).show()
+
+	if(x == 9)
+		uploadFiles()
+}
+
+function uploadFiles() {
+	var inputs = $("input[type='file']")
+	var files = []
+	$.each(inputs, function(index, input) {
+		$.each(input.files, function(index, file) {
+			files.push(file)
+		})
+	})
+
+	$(".filesUpload").empty()
+	var total = files.length
+	var count = 0
+	$.each(files, function(index, file) {
+		var uploadTask = storageRef.child('files/'+uid+'/'+file.name).put(file)
+
+		newTr = '<tr>' +
+                    '<td>'+file.name+'</td>' +
+                    '<td><div class="percent"></div><progress id="'+file.name+'" value="0" max="100"></progress></td>' +
+                '</tr>'
+
+		$(".filesUpload").append(newTr)
+
+		uploadTask.on('state_changed', function(snapshot){
+		  var progress = Math.floor((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+		  $("progress[id='"+file.name+"']").val(progress)
+		  $("progress[id='"+file.name+"']").parent().find('.percent').text(progress + '%')
+
+		  switch (snapshot.state) {
+		    case firebase.storage.TaskState.PAUSED: // or 'paused'
+		      //console.log('Upload is paused');
+		      break;
+		    case firebase.storage.TaskState.RUNNING: // or 'running'
+		      //console.log('Upload is running');
+		      break;
+		  }
+		}, function(error) {
+		  // Handle unsuccessful uploads
+		}, function() {
+			//console.log('Uploaded a blob or file!');
+			var downloadURL = uploadTask.snapshot.downloadURL;
+			//console.log(downloadURL)
+			count++
+			if(total == count)
+				sendForm()
+		});
+	})
+}
+
+function sendForm() {
+	form = {}
+	$.each($(".step1 input[type='text'], .step1 select, .step1 input[type='radio']:checked"), function(index, input) {
+		id = $(input).attr('id')
+		name = $(input).attr('name')
+		if(id !== undefined)
+			form[id] = $(input).val()
+		else if(name !== undefined)
+			form[name] = $(input).val()
+	})
+
+	$.each($(".input.date"), function(index, element) {
+		form[$(this).attr('id')] = $(element).find("select.days").val() +'/'+ $(element).find("select.months").val() +'/'+ $(element).find("select.years").val()
+	})
+
+	$.each($("table:not(.filesUpload)"), function(index, table) {
+		if($(table).attr('id') !== undefined) {
+			form[$(table).attr('id')] = []
+			$.each($(table).find("tr:not(.disabled):not(.th)"), function(index, tr) {
+				obj = {}
+				if($(table).attr('id') == 'languages') {
+					input = $(tr).find(":input[type='radio']:checked")
+					if(input.length) {
+						obj[input.attr('name').split('_')[0]] = input.val()
+						obj['langName'] = $(tr).find("select").val()
+					}
+				}
+				else {
+					$.each($(tr).find("td:not(:has(> img))"), function(index, td) {
+						input = $(td).find(":input")
+						value = input.val()
+						if(input.attr('type') == 'file')
+							value = value.split('/').pop().split('\\').pop()
+						obj[input.attr('name')] = value
+					})
+				}
+				if(!$.isEmptyObject(obj))
+					form[$(table).attr('id')].push(obj)
+			})
+		}
+	})
+
+	form['armyLimit'] = {}
+	$.each($("#armyLimit").find("input[type='checkbox']:checked"), function(index, checkbox) {
+		box = $(checkbox).closest(".input.innerBox2in2")
+		text = box.attr('id')
+		form['armyLimit'][text] = {}
+		$.each(box.find("input[type!='checkbox']"), function(index, input) {
+			form['armyLimit'][text][$(input).attr('name')] = $(input).val()
+		})
+	})
+
+	form['2units'] = []
+	$.each($("input[name='2units']:checked"), function(index, input) {
+		form['2units'].push($(input).val())
+	})
+
+	$.each($("input[type='radio']:checked"), function(index, input) {
+		form[$(input).attr('name')] = $(input).val()
+	})
+
+	$.each($(":input[name='alone']"), function(index, input) {
+		form[$(input).attr('id')] = $(input).val()
+	})
+
+	$.each($(":input[type!='radio']:checked"), function(index, input) {
+		form[$(input).attr('name')] = $(input).val()
+	})
+
+	form['userImg'] = $("#userImg").val().split('/').pop().split('\\').pop()
+
+	form['uid'] = uid
+
+	delete form['undefined']
+
+	db.ref('requests/'+uid).set(form, function() {
+		changeStep(10)
+		console.log(form)
+	})
+}
+
+function guid() {
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+    s4() + '-' + s4() + s4() + s4();
+}
+
+function s4() {
+  return Math.floor((1 + Math.random()) * 0x10000)
+    .toString(16)
+    .substring(1);
 }

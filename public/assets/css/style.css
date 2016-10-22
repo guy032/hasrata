@@ -1,7 +1,7 @@
 /*.step {
     display: none !important;
 }
-.step9 {
+.step4 {
     display: block !important;
 }*/
 
@@ -307,7 +307,7 @@ select {
     font-size: 15px;
 }
 
-input[type="file"] {
+input.hide {
     display: none;
 }
 .custom-file-upload {
@@ -433,7 +433,7 @@ input[type="checkbox"]{
 	width: 100%;
 }
 
-tr.disabled input, tr.disabled select {
+tr.disabled input, tr.disabled select, tr.disabled textarea {
     background: #c9c8c7;
     pointer-events: none;
 }
@@ -475,6 +475,20 @@ textarea.questionText {
     font-size: 14px !important;
 }
 
-.step.center {
+.step9, .step10 {
 	text-align: center;
+}
+
+div#imgName {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.box table {
+	width: 100%;
+}
+
+.percent {
+    display: inline-block;
+    margin-left: 10px;
 }
