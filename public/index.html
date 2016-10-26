@@ -124,7 +124,7 @@
                         <div class="description">
                             תמונה אישית * <div class="tip">(עד 5 MB)</div>
                         </div>
-                        <label for="userImg" class="custom-file-upload">
+                        <label id="userImgLabel" for="userImg" class="custom-file-upload">
                             <i class="fa fa-cloud-upload"></i>
                             העלאת תמונה                  
                         </label>
@@ -170,7 +170,8 @@
                     <div class="input">
                         <div class="description">אזרחות *
                         </div>
-                        <select class="citizenships mandatory" id="citizenship"></select>
+                        <!-- <select class="citizenships mandatory" id="citizenship"></select> -->
+                        <input type="text" name="citizenship" id="citizenship" class="mandatory">
                     </div>
                     <div class="input inline-block">
                         <div class="description">רחוב *</div>
@@ -221,7 +222,7 @@
                                     <td></td>
                                     <td>שם</td>
                                     <td>גיל</td>
-                                    <td>הערות\התייחסות <div class="tip">(עד 60 תווים)</div></td>
+                                    <td>הערות\התייחסות <div class="tip">(עד 140 תווים)</div></td>
                                 </tr>
                                 <tr>
                                     <td><img class="plusRemoveIcon remove" src="assets/img/remove.png"></td>
@@ -254,13 +255,13 @@
                                 <div class="twoTextInputs">
                                     <div class="firstRow2in2">
                                         <div class="description">
-                                            תאור המגבלה <div class="tip">(עד 60 תווים)</div>
+                                            תאור המגבלה <div class="tip">(עד 140 תווים)</div>
                                         </div>
                                         <textarea class="handicap check1" name="limit" disabled=""></textarea>
                                     </div>
                                     <div class="firstRow2in2">
                                         <div class="description">
-                                            תיאור מגבלת תנאי שירות <div class="tip">(עד 60 תווים)</div>
+                                            תיאור מגבלת תנאי שירות <div class="tip">(עד 140 תווים)</div>
                                         </div>
                                         <textarea class="serviceHandicap check1" name="conditions" disabled=""></textarea>
                                     </div>
@@ -416,7 +417,7 @@
                                     <td>עיר</td>
                                     <td>משנה</td>
                                     <td>עד שנה</td>
-                                    <td>סיבת עזיבה <div class="tip">(עד 60 תווים)</div></td>
+                                    <td>סיבת עזיבה <div class="tip">(עד 140 תווים)</div></td>
                                 </tr>
                                 <tr>
                                     <td><img class="plusRemoveIcon remove" src="assets/img/remove.png"></td>
@@ -446,7 +447,7 @@
                                     <td>מקצוע</td>
                                     <td>מספר יחידות</td>
                                     <td>ציון</td>
-                                    <td>הערות <div class="tip">(האם זהו ציון בגרות, ציון הגשה לבגרות או ציון סוף שנה)</div></td>
+                                    <td>הערות <br><div class="tip">(האם זהו ציון בגרות, ציון הגשה לבגרות או ציון סוף שנה)</div></td>
                                 </tr>
                                 <tr>
                                     <td><img class="plusRemoveIcon remove" src="assets/img/remove.png"></td>
@@ -474,7 +475,7 @@
                                     <td>מקצוע</td>
                                     <td>מספר יחידות</td>
                                     <td>ציון</td>
-                                    <td>הערות <div class="tip">(האם זהו ציון בגרות, ציון הגשה לבגרות או ציון סוף שנה)</div></td>
+                                    <td>הערות <br><div class="tip">(האם זהו ציון בגרות, ציון הגשה לבגרות או ציון סוף שנה)</div></td>
                                 </tr>
                                 <tr>
                                     <td><img class="plusRemoveIcon remove" src="assets/img/remove.png"></td>
@@ -507,13 +508,13 @@
                         <input type="radio" name="miclala" value="yudGimel"> י"ג
                         <input type="radio" name="miclala" value="yudDaled"> י"ד
                     </div>
-                    <div class="boldQuestion">תאר את סגנון הלימוד שלך, איזה תלמיד היית? <div class="tip">(עד 240 תווים)</div> *</div>
+                    <div class="boldQuestion">תאר את סגנון הלימוד שלך, איזה תלמיד היית? <div class="tip">(עד 140 תווים)</div> *</div>
                     <textarea class="questionText mandatory" name="alone" id="studyStyle"></textarea>
 
-                    <div class="boldQuestion">מה היה לך יותר קשה בבית-הספר? <div class="tip">(עד 240 תווים)</div> *</div>
+                    <div class="boldQuestion">מה היה לך יותר קשה בבית-הספר? <div class="tip">(עד 140 תווים)</div> *</div>
                     <textarea class="questionText mandatory" name="alone" id="hardSchool"></textarea>
 
-                    <div class="boldQuestion">איך המחנך שלך היה מתאר אותך? <div class="tip">(עד 240 תווים)</div> *</div>
+                    <div class="boldQuestion">איך המחנך שלך היה מתאר אותך? <div class="tip">(עד 140 תווים)</div> *</div>
                     <textarea class="questionText mandatory" name="alone" id="yourTeacherDesc"></textarea>
 				</div>
                 <div class="step step5">
@@ -564,19 +565,19 @@
                 <div class="step step6">
                     <h2>הרחב/י בנוגע לפעילותך החברתית *</h2>
 
-                    <div class="boldQuestion">תאר את חוג החברים שלך <div class="tip">(עד 240 תווים)</div></div>
+                    <div class="boldQuestion">תאר את חוג החברים שלך <div class="tip">(עד 140 תווים)</div></div>
                     <textarea class="mandatory questionText" name="alone" id="friendsCircle"></textarea>
 
-                    <div class="boldQuestion">האם היית פעיל בתנועת נוער ו/או פעילות התנדבותית? אם כן, תאר את מעורבותך ומשך הזמן שהיית פעיל <div class="tip">(עד 240 תווים)</div></div>
+                    <div class="boldQuestion">האם היית פעיל בתנועת נוער ו/או פעילות התנדבותית? אם כן, תאר את מעורבותך ומשך הזמן שהיית פעיל <div class="tip">(עד 140 תווים)</div></div>
                     <textarea class="mandatory questionText" name="alone" id="tnuatNoar"></textarea>
 
-                    <div class="boldQuestion">עם איזה אנשים יותר קשה לך להסתדר? <div class="tip">(עד 240 תווים)</div></div>
+                    <div class="boldQuestion">עם איזה אנשים יותר קשה לך להסתדר? <div class="tip">(עד 140 תווים)</div></div>
                     <textarea class="mandatory questionText" name="alone" id="hardPeople"></textarea>
 
-                    <div class="boldQuestion">מה התכונה החזקה או החיובית המאפיינת אותך ביותר? איך זה בא לידי ביטוי? <div class="tip">(עד 240 תווים)</div></div>
+                    <div class="boldQuestion">מה התכונה החזקה או החיובית המאפיינת אותך ביותר? איך זה בא לידי ביטוי? <div class="tip">(עד 140 תווים)</div></div>
                     <textarea class="mandatory questionText" name="alone" id="favoriteCharacter"></textarea>
 
-                    <div class="boldQuestion">איזו תכונה חלשה או שלילית מאפיינת אותך? איך זה בא לידי ביטוי? <div class="tip">(עד 240 תווים)</div></div>
+                    <div class="boldQuestion">איזו תכונה חלשה או שלילית מאפיינת אותך? איך זה בא לידי ביטוי? <div class="tip">(עד 140 תווים)</div></div>
                     <textarea class="mandatory questionText" name="alone" id="worstCharacter"></textarea>
 
                     <div class="boldQuestion">מ-1 עד 5, מה להערכתך היא רמת הכושר הגופני שלך? <div class="tip">(1=הכי נמוך, 5=הכי גבוה)</div></div>
@@ -595,22 +596,22 @@
                         <input type="radio" name="motivationRadio" value="לא יודע"> לא יודע<br/>
                     </div>
 
-                    <div class="boldQuestion">אני מעוניין/ת לשרת מיחידות ההסרטה כי... <div class="tip">(עד 240 תווים)</div></div>
+                    <div class="boldQuestion">אני מעוניין/ת לשרת מיחידות ההסרטה כי... <div class="tip">(עד 140 תווים)</div></div>
                     <textarea class="mandatory questionText" name="alone" id="whyServeHasrata"></textarea>
 
-                    <div class="boldQuestion">מהן ציפיותך מהשירות הצבאי באחת מיחידות ההסרטה? <div class="tip">(עד 240 תווים)</div></div>
+                    <div class="boldQuestion">מהן ציפיותך מהשירות הצבאי באחת מיחידות ההסרטה? <div class="tip">(עד 140 תווים)</div></div>
                     <textarea class="mandatory questionText" name="alone" id="tzipiot"></textarea>
 
-                    <div class="boldQuestion">מהם חששותיך מהשירות הצבאי באחת מיחידות ההסרטה? <div class="tip">(עד 240 תווים)</div></div>
+                    <div class="boldQuestion">מהם חששותיך מהשירות הצבאי באחת מיחידות ההסרטה? <div class="tip">(עד 140 תווים)</div></div>
                     <textarea class="mandatory questionText" name="alone" id="fears"></textarea>
 
-                    <div class="boldQuestion">במידה ותחוש שאתה לא ממצה את כישוריך, מה תעשה? <div class="tip">(עד 240 תווים)</div></div>
+                    <div class="boldQuestion">במידה ותחוש שאתה לא ממצה את כישוריך, מה תעשה? <div class="tip">(עד 140 תווים)</div></div>
                     <textarea class="mandatory questionText" name="alone" id="whatDoIf"></textarea>
 
-                    <div class="boldQuestion">מה לדעתך השירות ביחידת ההסרטה יוכל להקנות לך? <div class="tip">(עד 240 תווים)</div></div>
+                    <div class="boldQuestion">מה לדעתך השירות ביחידת ההסרטה יוכל להקנות לך? <div class="tip">(עד 140 תווים)</div></div>
                     <textarea class="mandatory questionText" name="alone" id="whatWillGive"></textarea>
 
-                    <div class="boldQuestion">מה לדעתך תוכל לתרום במיוחד ליחידת ההסרטה? <div class="tip">(עד 240 תווים)</div></div>
+                    <div class="boldQuestion">מה לדעתך תוכל לתרום במיוחד ליחידת ההסרטה? <div class="tip">(עד 140 תווים)</div></div>
                     <textarea class="mandatory questionText" name="alone" id="whatSpecialGive"></textarea>
 				</div>
                 <div class="step step8">
@@ -623,8 +624,8 @@
                                     <td></td>
                                     <td>תוכנה/ציוד</td>
                                     <td>זמן שימוש/היכרות</td>
-                                    <td>איך למדתי (<div class="tip">(עד 60 תווים)</div></td>
-                                    <td>מה אני יועד ליישם (<div class="tip">(עד 60 תווים)</div></td>
+                                    <td>איך למדתי (<div class="tip">(עד 140 תווים)</div></td>
+                                    <td>מה אני יועד ליישם (<div class="tip">(עד 140 תווים)</div></td>
                                 </tr>
                                 <tr>
                                     <td><img class="plusRemoveIcon remove" src="assets/img/remove.png"></td>

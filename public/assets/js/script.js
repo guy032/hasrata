@@ -13,6 +13,21 @@ var debug;
 var uid = guid()
 
 $(document).ready(function() {
+	$('input').click(function() {
+		if($(this).hasClass('warning'))
+	  		$(this).removeClass('warning')
+	});
+
+	$('textarea').click(function() {
+		if($(this).hasClass('warning'))
+	  		$(this).removeClass('warning')
+	});
+
+	$('label').click(function() {
+		if($(this).hasClass('warning'))
+	  		$(this).removeClass('warning')
+	});
+
 	$(".buttons .button").click(function() {
 		id = $(this).attr("id")
 		currentStep = Number($(".content .step:visible").attr("class").replace("step step", ""))
@@ -21,8 +36,10 @@ $(document).ready(function() {
 			$( ".step" + currentStep + " .mandatory" ).each(function( index ) {
 			  if(!$.trim(this.value).length) { // zero-length string AFTER a trim
 				x = currentStep
-				alert(this.id)
-				return false;
+				if(this.id == "userImg")
+					$("#userImgLabel").addClass('warning')
+				else
+					$(this).addClass('warning')
 			  }
 			});
 			if(currentStep == 3){
@@ -32,7 +49,6 @@ $(document).ready(function() {
 				});
 				if(counter != 2) {
 					x = currentStep
-					alert('error')
 				}
 			}
 		}

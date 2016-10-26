@@ -243,6 +243,10 @@ body {
 	margin-bottom: 20px;
 }
 
+input {
+	vertical-align: middle;
+}
+
 .addRemovePlugin {
     width: 100%;
     margin: 0;
@@ -294,7 +298,6 @@ input {
 
 .description {
 	font-family: 'Conv_NarkisBlock-Medium';
-    font-weight: bold;
     font-size: 18px;
 }
 
@@ -492,4 +495,12 @@ div#imgName {
 .percent {
     display: inline-block;
     margin-left: 10px;
+}
+
+.irs-single {
+	/*background: blue;*/
+}
+
+.warning {
+	border-color: red;
 }
