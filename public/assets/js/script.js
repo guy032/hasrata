@@ -16,8 +16,26 @@ $(document).ready(function() {
 	$(".buttons .button").click(function() {
 		id = $(this).attr("id")
 		currentStep = Number($(".content .step:visible").attr("class").replace("step step", ""))
-		if(id == 'continue')
+		if(id == 'continue') {
 			x = currentStep+1
+			$( ".step" + currentStep + " .mandatory" ).each(function( index ) {
+			  if(!$.trim(this.value).length) { // zero-length string AFTER a trim
+				x = currentStep
+				alert(this.id)
+				return false;
+			  }
+			});
+			if(currentStep == 3){
+				counter = 0;
+				$( ".step3 .2units" ).each(function( index ) {
+				  counter += this.checked
+				});
+				if(counter != 2) {
+					x = currentStep
+					alert('error')
+				}
+			}
+		}
 		else
 			x = currentStep-1
 
