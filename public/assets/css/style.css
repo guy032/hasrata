@@ -498,20 +498,12 @@ div#imgName {
     margin-left: 10px;
 }
 
-.irs-single {
-	/*background: blue;*/
-}
-
 .warning {
 	border-color: red;
 }
 
 .notesWidth {
 	width: 92% !important;
-}
-
-.irs-line-mid, .irs-line-left, .irs-line-right, .irs-bar, .irs-bar-edge, .irs-slider {
-    /*background: url(../img/sprite-skin-flat.png) repeat-x !important;*/
 }
 
 .firsttd{

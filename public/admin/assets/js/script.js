@@ -101,7 +101,10 @@ var i18n = new Jed({
       "softwares" : ["תוכנות\\ציוד מקצועי בהם אני משתמש"],
       "languages" : ["פרט/י בנוגע לכישורי שפה"],
       "type" : ["מדיה"],
-      "type" : ["מדיה"],
+      "miclala" : ["האם את/ה בלימודי מכללה במסלול קולנוע וטלוויזיה (י״ג-י״ד)?"],
+      "gender" : ["מין"],
+      "bagrut" : ["ככל הנראה, האם תסיים/י את התיכון עם תעודת בגרות מלאה?"],
+      "units": ["שני תחומים מועדפים בהסרטה"]
     }
   },
   "domain" : "messages"
@@ -117,8 +120,18 @@ $(document).ready(function() {
 			if(user.userImg !== undefined)
 				user.userImg = '<a href="#" class="link">'+user.userImg+'</a>'
 			$.each(user, function(index, value) {
-				if(typeof value !== 'object' && i18n.gettext(index).length < 20)
+				if(typeof value !== 'object')
 					columns.push(index)
+				else {
+					counter = 1
+					$.each(value, function(i, obj) {
+						$.each(obj, function(idx, val) {
+							user[idx+counter] = val
+							columns.push(idx+counter)
+						})
+						counter++
+					})
+				}
 			})
 		})
 
@@ -127,7 +140,7 @@ $(document).ready(function() {
 		$.each(columns, function(index, column) {
 			if(column != 'uid') {
 				cols.push({
-					title: i18n.gettext(column),
+					title: i18n.gettext(column.replace(/[0-9]/g, '')),
 					name: column,
 					data: column,
 					defaultContent: ""
@@ -137,29 +150,43 @@ $(document).ready(function() {
 
 		table = $('#users').DataTable({
 			dom: 'Bfrtip',
-		    scrollY: '70vh',
+		    scrollY: '55vh',
 	        buttons: [
 	            'colvis',
+				'selectAll',
+				'selectNone',
 		        {
 	                text: 'Delete',
 	                action: function ( e, dt, node, config ) {
 	                	rows = table.rows('.selected')
-	                	$.each(rows.data(), function(index, row) {
-	                		uid = row.uid
-	                		files = []
-	                		if(row.userImg !== undefined)
-								files.push(row.userImg.replace('<a href="#" class="link">', '').replace('</a>', ''))
-							$.each(row.portfolioFiles, function(i, obj) {
-								files.push(obj.file)
-							})
-							db.ref('users/'+uid).set(null, function() {
-								rows.remove().draw()
-								$.each(files, function(index, fileName) {
-									storageRef.child('files/'+uid+'/'+fileName.replace('<a href="#" class="link">', '').replace('</a>', '')).delete();
+	                	if(Object.keys(table.rows('.selected')[0]).length > 0) {
+							if (confirm('למחוק בטוח את כל השורות שנבחרו?')) {
+								$.each(rows.data(), function(index, row) {
+									uid = row.uid
+									files = []
+									if(row.userImg !== undefined)
+										files.push(row.userImg.replace('<a href="#" class="link">', '').replace('</a>', ''))
+									$.each(row.portfolioFiles, function(i, obj) {
+										files.push(obj.file)
+									})
+									db.ref('users/'+uid).set(null, function() {
+										rows.remove().draw()
+										$.each(files, function(index, fileName) {
+											storageRef.child('files/'+uid+'/'+fileName.replace('<a href="#" class="link">', '').replace('</a>', '')).delete();
+										})
+									})
 								})
-							})
-	                	})
+							}
+	                	}
 	                   
+	                }
+	            },
+	            {
+                	extend: 'csv',
+	                exportOptions: {
+	                    modifier: {
+	                        selected: true
+	                    }
 	                }
 	            }
 	        ],
@@ -196,59 +223,72 @@ $(document).ready(function() {
 		table.rows.add(rows).draw()
 
 		$(document).on('click', '#users tr td:not(.select-checkbox)', function() {
-			data = table.row($(this)).data()
-			$('#modal1').openModal();
 			$("#tables").empty()
-			$("#uid").val(data.uid)
-			rows = []
-			$.each(data, function(index, value) {
-				if(typeof value !== 'object') {
-					if(index != 'uid') {
-						rows.push({
-							'index': i18n.gettext(index),
-							'value': value
-						})
-					}
-				}
-				else {
-					$("#tables").append("<hr><h5>"+i18n.gettext(index)+"</h5><table id='"+index+"' class='table table-striped table-bordered' cellspacing=''0' width='100%'></table>")
-					columnsNames = []
-					rows2 = []
-					$.each(value, function(idx, val) {
-						if(index == 'portfolioFiles') {
-							$.each(val, function(i, n) {
-								if(i == 'file')
-									value[idx][i] = '<a href="#" class="link">'+n+'</a>'
+			$('#modal1').openModal();
+			$("#content").hide()
+			$("#loading").show()
+
+			setTimeout(function(t) {
+				data = table.row($(t)).data()
+				$("#personalImg").attr('src', '')
+				$("#uid").val(data.uid)
+				img = data.userImg.replace('<a href="#" class="link">', '').replace('</a>', '')
+				storageRef.child('files/'+$("#uid").val()+'/'+img).getDownloadURL().then(function(url) {
+					console.log(url)
+					$("#personalImg").attr('src', url)
+				})
+				rows = []
+				$.each(data, function(index, value) {
+					if(typeof value !== 'object') {
+						if(index != 'uid') {
+							rows.push({
+								'index': i18n.gettext(index.replace(/[0-9]/g, '')),
+								'value': value
 							})
 						}
-						if(index == 'armyLimit')
-							val['limitName'] = i18n.gettext(idx)
-						rows2.push(val)
-					})
-					$.each(flatten(value), function(index, column) {
-						name = /[^\.]*$/.exec(index)[0]
-						columnsNames.push(name)
-					})
-					columnsNames = $.unique(columnsNames)
-					columns = []
-					$.each(columnsNames, function(index, name) {
-						columns.push({
-							title: i18n.gettext(name),
-							name: name,
-							data: name,
-							defaultContent: ""
+					}
+					else {
+						$("#tables").append("<hr><h5>"+i18n.gettext(index)+"</h5><table id='"+index+"' class='table table-striped table-bordered' cellspacing=''0' width='100%'></table>")
+						columnsNames = []
+						rows2 = []
+						$.each(value, function(idx, val) {
+							if(index == 'portfolioFiles') {
+								$.each(val, function(i, n) {
+									if(i == 'file')
+										value[idx][i] = '<a href="#" class="link">'+n+'</a>'
+								})
+							}
+							if(index == 'armyLimit')
+								val['limitName'] = i18n.gettext(idx)
+							rows2.push(val)
 						})
-					})
-					window[index] = $("#"+index).DataTable({
-						columns: columns
-					})
+						$.each(flatten(value), function(index, column) {
+							name = /[^\.]*$/.exec(index)[0]
+							columnsNames.push(name)
+						})
+						columnsNames = $.unique(columnsNames)
+						columns = []
+						$.each(columnsNames, function(index, name) {
+							columns.push({
+								title: i18n.gettext(name),
+								name: name,
+								data: name,
+								defaultContent: ""
+							})
+						})
+						window[index] = $("#"+index).DataTable({
+							columns: columns
+						})
 
-					window[index].clear()
-					window[index].rows.add(rows2).draw()
-				}
-				tableUser.clear()
-				tableUser.rows.add(rows).draw()
-			})
+						window[index].clear()
+						window[index].rows.add(rows2).draw()
+					}
+					tableUser.clear()
+					tableUser.rows.add(rows).draw()
+					$("#loading").hide()
+					$("#content").show()
+				})
+			}, 500, this)
 		})
 	})
 })
