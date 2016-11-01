@@ -40,7 +40,7 @@ $(document).ready(function() {
 		currentStep = Number($(".content .step:visible").attr("class").replace("step step", ""))
 		if(id == 'continue') {
 			x = currentStep+1
-			/*$( ".step" + currentStep + " .mandatory" ).each(function( index ) {
+			$( ".step" + currentStep + " .mandatory" ).each(function( index ) {
 			  if(!$.trim(this.value).length) { // zero-length string AFTER a trim
 				x = currentStep
 				if(this.id == "userImg")
@@ -57,7 +57,7 @@ $(document).ready(function() {
 				if(counter != 2) {
 					x = currentStep
 				}
-			}*/
+			}
 		}
 		else
 			x = currentStep-1
