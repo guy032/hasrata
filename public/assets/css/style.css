@@ -513,3 +513,7 @@ div#imgName {
 .languages {
 	width: 50px !important;
 }
+
+.fifthDisabled:nth-child(7) .plusRemoveIcon {
+	visibility: hidden;
+}
