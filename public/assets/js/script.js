@@ -13,11 +13,45 @@ var debug;
 var uid = guid()
 
 $(document).ready(function() {
+	$('input').click(function() {
+		if($(this).hasClass('warning'))
+	  		$(this).removeClass('warning')
+	});
+
+	$('textarea').click(function() {
+		if($(this).hasClass('warning'))
+	  		$(this).removeClass('warning')
+	});
+
+	$('label').click(function() {
+		if($(this).hasClass('warning'))
+	  		$(this).removeClass('warning')
+	});
+
 	$(".buttons .button").click(function() {
 		id = $(this).attr("id")
 		currentStep = Number($(".content .step:visible").attr("class").replace("step step", ""))
-		if(id == 'continue')
+		if(id == 'continue') {
 			x = currentStep+1
+			$( ".step" + currentStep + " .mandatory" ).each(function( index ) {
+			  if(!$.trim(this.value).length) { // zero-length string AFTER a trim
+				x = currentStep
+				if(this.id == "userImg")
+					$("#userImgLabel").addClass('warning')
+				else
+					$(this).addClass('warning')
+			  }
+			});
+			if(currentStep == 3){
+				counter = 0;
+				$( ".step3 .2units" ).each(function( index ) {
+				  counter += this.checked
+				});
+				if(counter != 2) {
+					x = currentStep
+				}
+			}
+		}
 		else
 			x = currentStep-1
 

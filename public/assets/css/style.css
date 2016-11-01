@@ -243,6 +243,10 @@ body {
 	margin-bottom: 20px;
 }
 
+input {
+	vertical-align: middle;
+}
+
 .addRemovePlugin {
     width: 100%;
     margin: 0;
@@ -257,7 +261,7 @@ body {
 }
 
 .step5 .addRemovePlugin * {
-	text-align: right;
+	/*text-align: right;*/
 }
 
 .inline-block {
@@ -293,9 +297,9 @@ input {
 }
 
 .description {
-	font-family: 'Conv_NarkisBlock-Medium';
+	/*font-family: 'Conv_NarkisBlock-Medium';*/
+    font-size: 17px;
     font-weight: bold;
-    font-size: 18px;
 }
 
 .checkboxes {
@@ -461,9 +465,9 @@ textarea.questionText {
 }
 
 .maxSizeNote {
-    font-size: 23px;
+    /*font-size: 23px;
     font-weight: bold;
-    font-family: arial;
+    font-family: arial;*/
     padding-top: 15px;
 }
 
@@ -492,4 +496,28 @@ div#imgName {
 .percent {
     display: inline-block;
     margin-left: 10px;
+}
+
+.irs-single {
+	/*background: blue;*/
+}
+
+.warning {
+	border-color: red;
+}
+
+.notesWidth {
+	width: 92% !important;
+}
+
+.irs-line-mid, .irs-line-left, .irs-line-right, .irs-bar, .irs-bar-edge, .irs-slider {
+    /*background: url(../img/sprite-skin-flat.png) repeat-x !important;*/
+}
+
+.firsttd{
+	text-align: right;
+}
+
+.languages {
+	width: 50px !important;
 }

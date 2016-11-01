@@ -108,42 +108,42 @@
                 <div class="step step1">
                     <h2>מלא\י פרטים כלליים</h2>
                     <div class="input">
-                        <div class="description">שם משפחה
+                        <div class="description">שם משפחה *
                         </div>
                         <div class="textinput">
-                            <input type="text" name="lastname" id="lastName">
+                            <input type="text" name="lastname" id="lastName" class="mandatory">
                         </div>
                     </div>
                     <div class="input inline-block">
-                        <div class="description">שם פרטי</div>
+                        <div class="description">שם פרטי *</div>
                         <div class="textinput">
-                            <input type="text" name="firstname" id="firstName">
+                            <input type="text" name="firstname" id="firstName" class="mandatory">
                         </div>
                     </div>
                     <div class="input inline-block">
                         <div class="description">
-                            תמונה אישית <div class="tip">(עד 5 MB)</div>
+                            תמונה אישית * <div class="tip">(עד 5 MB)</div>
                         </div>
-                        <label for="userImg" class="custom-file-upload">
+                        <label id="userImgLabel" for="userImg" class="custom-file-upload">
                             <i class="fa fa-cloud-upload"></i>
                             העלאת תמונה                  
                         </label>
                         <div id="imgName"></div>
-                        <input id="userImg" type="file" class="hide" />
+                        <input id="userImg" type="file" class="hide mandatory" />
                     </div>
                     <div class="input">
-                        <div class="description">תעודת זהות
+                        <div class="description">תעודת זהות *
                         </div>
                         <div class="textinput">
-                            <input type="text" name="id" id="idNumber">
+                            <input type="text" name="id" id="idNumber" class="mandatory">
                         </div>
                     </div>
                     <div class="input date" id="birthData">
-                        <div class="description">תאריך לידה
+                        <div class="description">תאריך לידה *
                         </div>
-                        <select class="years"></select>
-                        <select class="months"></select>
-                        <select class="days"></select>
+                        <select class="years mandatory"></select>
+                        <select class="months mandatory"></select>
+                        <select class="days mandatory"></select>
                     </div>
                     <div class="input date" id="aliahData">
                         <div class="description">תאריך עלייה
@@ -153,10 +153,10 @@
                         <select class="days"></select>
                     </div>
                     <div class="input">
-                        <div class="description">מין
+                        <div class="description">מין *
                         </div>
                         <div class="checkboxes">
-                            <input class="checkbox" type="radio" name="gender" value="זכר"> זכר
+                            <input checked class="checkbox" type="radio" name="gender" value="זכר"> זכר
   							<input class="checkbox" type="radio" name="gender" value="נקבה"> נקבה
                         </div>
                     </div>
@@ -168,33 +168,34 @@
                         </div>
                     </div>
                     <div class="input">
-                        <div class="description">אזרחות
+                        <div class="description">אזרחות *
                         </div>
-                        <select class="citizenships" id="citizenship"></select>
+                        <!-- <select class="citizenships mandatory" id="citizenship"></select> -->
+                        <input type="text" name="citizenship" id="citizenship" class="mandatory">
                     </div>
                     <div class="input inline-block">
-                        <div class="description">רחוב</div>
+                        <div class="description">רחוב *</div>
                         <div class="textinput">
-                            <input type="text" name="street" id="street">
+                            <input type="text" name="street" id="street" class="mandatory">
                         </div>
                     </div>
                     <div class="input inline-block">
-                        <div class="description">מספר</div>
+                        <div class="description">מספר *</div>
                         <div class="textinput">
-                            <input type="text" name="street-number" id="streetNumber">
+                            <input type="text" name="street-number" id="streetNumber" class="mandatory">
                         </div>
                     </div>
                     <br/>
                     <div class="input inline-block">
-                        <div class="description">עיר</div>
+                        <div class="description">עיר *</div>
                         <div class="textinput">
-                            <input type="text" name="city" id="city">
+                            <input type="text" name="city" id="city" class="mandatory">
                         </div>
                     </div>
                     <div class="input inline-block">
-                        <div class="description">מיקוד</div>
+                        <div class="description">מיקוד *</div>
                         <div class="textinput">
-                            <input type="text" name="target" id="zip">
+                            <input type="text" name="target" id="zip" class="mandatory">
                         </div>
                     </div>
                     <div class="input">
@@ -205,10 +206,10 @@
                         </div>
                     </div>
                     <div class="input">
-                        <div class="description">סלולארי
+                        <div class="description">סלולארי *
                         </div>
                         <div class="textinput">
-                            <input type="text" name="cellphone" id="cellphone">
+                            <input type="text" name="cellphone" id="cellphone" class="mandatory">
                         </div>
                     </div>
                 </div>
@@ -395,14 +396,14 @@
                             </table>
                         </div>
                     </div>
-                    <h2>בחר שני תחומים</h2>
+                    <h2>בחר שני תחומים *</h2>
                     <div class="boldQuestion">אם תתקבל/י לאחת מהיחידות, באילו שניים מהתחומים הבאים היית הכי רוצה לעסוק?</div>
-                    <input type="checkbox" name="2units" value="צילום וידאו (כולל תאורת וסאונד)">צילום וידאו (כולל תאורת וסאונד)<br>
-                    <input type="checkbox" name="2units" value="צילום סטילס">צילום סטילס<br>
-                    <input type="checkbox" name="2units" value="תסריטאות ותחקיר">תסריטאות ותחקיר<br>
-                    <input type="checkbox" name="2units" value="הפקה">הפקה<br>
-                    <input type="checkbox" name="2units" value="עריכת וידאו">עריכת וידאו<br>
-                    <input type="checkbox" name="2units" value="גרפיקה ואנימציה">גרפיקה ואנימציה
+                    <input type="checkbox" name="2units" class="2units" value="צילום וידאו (כולל תאורת וסאונד)">צילום וידאו (כולל תאורת וסאונד)<br>
+                    <input type="checkbox" name="2units" class="2units" value="צילום סטילס">צילום סטילס<br>
+                    <input type="checkbox" name="2units" class="2units" value="תסריטאות ותחקיר">תסריטאות ותחקיר<br>
+                    <input type="checkbox" name="2units" class="2units" value="הפקה">הפקה<br>
+                    <input type="checkbox" name="2units" class="2units" value="עריכת וידאו">עריכת וידאו<br>
+                    <input type="checkbox" name="2units" class="2units" value="גרפיקה ואנימציה">גרפיקה ואנימציה
                 </div>
                 <div class="step step4">
                     <h2>מלא/י פרטי השכלה תיכונית</h2>
@@ -446,21 +447,21 @@
                                     <td>מקצוע</td>
                                     <td>מספר יחידות</td>
                                     <td>ציון</td>
-                                    <td>הערות <div class="tip">(האם זהו ציון בגרות, ציון הגשה לבגרות או ציון סוף שנה)</div></td>
+                                    <td>הערות <br><div class="tip">(האם זהו ציון בגרות, ציון הגשה לבגרות או ציון סוף שנה)</div></td>
                                 </tr>
                                 <tr>
                                     <td><img class="plusRemoveIcon remove" src="assets/img/remove.png"></td>
                                     <td><input name="skill"></td>
                                     <td><input type="number" name="unitsNumber" min="1" max="20"></td>
                                     <td><input name="score"></td>
-                                    <td><input name="notes"></td>
+                                    <td><input name="notes" class="notesWidth"></td>
                                 </tr>
                                 <tr class="disabled">
                                     <td><img class="plusRemoveIcon add" src="assets/img/add.png"></td>
                                     <td><input name="skill"></td>
                                     <td><input type="number" name="unitsNumber" min="1" max="20"></td>
                                     <td><input name="score"></td>
-                                    <td><input name="notes"></td>
+                                    <td><input name="notes" class="notesWidth"></td>
                                 </tr>
                             </table>
                         </div>
@@ -474,56 +475,56 @@
                                     <td>מקצוע</td>
                                     <td>מספר יחידות</td>
                                     <td>ציון</td>
-                                    <td>הערות <div class="tip">(האם זהו ציון בגרות, ציון הגשה לבגרות או ציון סוף שנה)</div></td>
+                                    <td>הערות <br><div class="tip">(האם זהו ציון בגרות, ציון הגשה לבגרות או ציון סוף שנה)</div></td>
                                 </tr>
                                 <tr>
                                     <td><img class="plusRemoveIcon remove" src="assets/img/remove.png"></td>
                                     <td><input name="skill"></td>
                                     <td><input type="number" name="unitsNumber" min="1" max="20"></td>
                                     <td><input name="score"></td>
-                                    <td><input name="notes"></td>
+                                    <td><input name="notes" class="notesWidth"></td>
                                 </tr>
                                 <tr class="disabled">
                                     <td><img class="plusRemoveIcon add" src="assets/img/add.png"></td>
                                     <td><input name="skill"></td>
                                     <td><input type="number" name="unitsNumber" min="1" max="20"></td>
                                     <td><input name="score"></td>
-                                    <td><input name="notes"></td>
+                                    <td><input name="notes" class="notesWidth"></td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                     <h2>אתגרים וחוזקות בתחום הלמידה</h2>
-                    <div class="boldQuestion">ככל הנראה, האם תסיים/י את התיכון עם תעודת בגרות מלאה?</div>
+                    <div class="boldQuestion">ככל הנראה, האם תסיים/י את התיכון עם תעודת בגרות מלאה? *</div>
                     <div class="radioLine">
-                        <input type="radio" name="bagrut" value="yes"> כן
+                        <input checked type="radio" name="bagrut" value="yes"> כן
                         <input type="radio" name="bagrut" value="no"> לא
                     </div>
                     <div class="boldQuestion">כתוב/י מהו ממוצע הציונים שלך בתעודת הסיום של שנת הלימודים הקודמת</div>
                     <input type="number" name="alone" id="scoreAverage" min="50" max="100">
-                    <div class="boldQuestion">האם את/ה בלימודי מכללה במסלול קולנוע וטלוויזיה (י״ג-י״ד)?</div>
+                    <div class="boldQuestion">האם את/ה בלימודי מכללה במסלול קולנוע וטלוויזיה (י״ג-י״ד)? *</div>
                     <div class="radioLine">
-                        <input type="radio" name="miclala" value="no"> לא
+                        <input type="radio" name="miclala" value="no" checked> לא
                         <input type="radio" name="miclala" value="yudGimel"> י"ג
                         <input type="radio" name="miclala" value="yudDaled"> י"ד
                     </div>
-                    <div class="boldQuestion">תאר את סגנון הלימוד שלך, איזה תלמיד היית? <div class="tip">(עד 240 תווים)</div></div>
-                    <textarea class="questionText" name="alone" id="studyStyle"></textarea>
+                    <div class="boldQuestion">תאר את סגנון הלימוד שלך, איזה תלמיד היית? <div class="tip">(עד 140 תווים)</div> *</div>
+                    <textarea class="questionText mandatory" name="alone" id="studyStyle"></textarea>
 
-                    <div class="boldQuestion">מה היה לך יותר קשה בבית-הספר? <div class="tip">(עד 240 תווים)</div></div>
-                    <textarea class="questionText" name="alone" id="hardSchool"></textarea>
+                    <div class="boldQuestion">מה היה לך יותר קשה בבית-הספר? <div class="tip">(עד 140 תווים)</div> *</div>
+                    <textarea class="questionText mandatory" name="alone" id="hardSchool"></textarea>
 
-                    <div class="boldQuestion">איך המחנך שלך היה מתאר אותך? <div class="tip">(עד 240 תווים)</div></div>
-                    <textarea class="questionText" name="alone" id="yourTeacherDesc"></textarea>
+                    <div class="boldQuestion">איך המחנך שלך היה מתאר אותך? <div class="tip">(עד 140 תווים)</div> *</div>
+                    <textarea class="questionText mandatory" name="alone" id="yourTeacherDesc"></textarea>
 				</div>
                 <div class="step step5">
-                    <h2>פרט/י בנוגע לכישורי שפה</h2>
+                    <h2>פרט/י בנוגע לכישורי שפה *</h2>
                     <div class="box">
                         <div class="innerBox">
                             <table class="addRemovePlugin" id="languages">
                                 <tr class="th">
                                     <td></td>
-                                    <td>שפה</td>
+                                    <td class="firsttd">שפה</td>
                                     <td>ברמת שפת אם</td>
                                     <td>כותב/ת, קורא/ת ומדבר/ת חופשי</td>
                                     <td>כותב/ת, קורא/ת ומדבר/ת בינוני</td>
@@ -531,24 +532,26 @@
                                     <td>אינני יודע/ת</td>
                                 </tr>
                                 <tr>
-                                    <td><select disabled class="languages english"></select></td>
+                                    <td></td>
+                                    <td class="firsttd">עברית</td>
                                     <td><input type="radio" name="langLevel_1" value="ברמת שפת אם"></td>
                                     <td><input type="radio" name="langLevel_1" value="כותב/ת, קורא/ת ומדבר/ת חופשי"></td>
-                                    <td><input type="radio" name="langLevel_1" value="כותב/ת, קורא/ת ומדבר/ת בינוני"></td>
+                                    <td><input checked type="radio" name="langLevel_1" value="כותב/ת, קורא/ת ומדבר/ת בינוני"></td>
                                     <td><input type="radio" name="langLevel_1" value="מבין/ה אך לא מדבר/ת"></td>
                                     <td><input type="radio" name="langLevel_1" value="אינני יודע/ת"></td>
                                 </tr>
                                 <tr>
-                                    <td><select disabled class="languages hebrew"></select></td>
+                                    <td></td>
+                                    <td class="firsttd">אנגלית</td>
                                     <td><input type="radio" name="langLevel_2" value="ברמת שפת אם"></td>
                                     <td><input type="radio" name="langLevel_2" value="כותב/ת, קורא/ת ומדבר/ת חופשי"></td>
-                                    <td><input type="radio" name="langLevel_2" value="כותב/ת, קורא/ת ומדבר/ת בינוני"></td>
+                                    <td><input checked type="radio" name="langLevel_2" value="כותב/ת, קורא/ת ומדבר/ת בינוני"></td>
                                     <td><input type="radio" name="langLevel_2" value="מבין/ה אך לא מדבר/ת"></td>
                                     <td><input type="radio" name="langLevel_2" value="אינני יודע/ת"></td>
                                 </tr>
                                 <tr class="disabled">
                                     <td><img class="plusRemoveIcon add" src="assets/img/add.png"></td>
-                                    <td><select class="languages"></select></td>
+                                    <td class="firsttd"><input type="text" class="languages"></td>
                                     <td><input type="radio" name="langLevel_4" value="ברמת שפת אם"></td>
                                     <td><input type="radio" name="langLevel_4" value="כותב/ת, קורא/ת ומדבר/ת חופשי"></td>
                                     <td><input type="radio" name="langLevel_4" value="כותב/ת, קורא/ת ומדבר/ת בינוני"></td>
@@ -560,56 +563,56 @@
                     </div>
 				</div>
                 <div class="step step6">
-                    <h2>הרחב/י בנוגע לפעילותך החברתית</h2>
+                    <h2>הרחב/י בנוגע לפעילותך החברתית *</h2>
 
-                    <div class="boldQuestion">תאר את חוג החברים שלך <div class="tip">(עד 240 תווים)</div></div>
-                    <textarea class="questionText" name="alone" id="friendsCircle"></textarea>
+                    <div class="boldQuestion">תאר את חוג החברים שלך <div class="tip">(עד 140 תווים)</div></div>
+                    <textarea class="mandatory questionText" name="alone" id="friendsCircle"></textarea>
 
-                    <div class="boldQuestion">האם היית פעיל בתנועת נוער ו/או פעילות התנדבותית? אם כן, תאר את מעורבותך ומשך הזמן שהיית פעיל <div class="tip">(עד 240 תווים)</div></div>
-                    <textarea class="questionText" name="alone" id="tnuatNoar"></textarea>
+                    <div class="boldQuestion">האם היית פעיל בתנועת נוער ו/או פעילות התנדבותית? אם כן, תאר את מעורבותך ומשך הזמן שהיית פעיל <div class="tip">(עד 140 תווים)</div></div>
+                    <textarea class="mandatory questionText" name="alone" id="tnuatNoar"></textarea>
 
-                    <div class="boldQuestion">עם איזה אנשים יותר קשה לך להסתדר? <div class="tip">(עד 240 תווים)</div></div>
-                    <textarea class="questionText" name="alone" id="hardPeople"></textarea>
+                    <div class="boldQuestion">עם איזה אנשים יותר קשה לך להסתדר? <div class="tip">(עד 140 תווים)</div></div>
+                    <textarea class="mandatory questionText" name="alone" id="hardPeople"></textarea>
 
-                    <div class="boldQuestion">מה התכונה החזקה או החיובית המאפיינת אותך ביותר? איך זה בא לידי ביטוי? <div class="tip">(עד 240 תווים)</div></div>
-                    <textarea class="questionText" name="alone" id="favoriteCharacter"></textarea>
+                    <div class="boldQuestion">מה התכונה החזקה או החיובית המאפיינת אותך ביותר? איך זה בא לידי ביטוי? <div class="tip">(עד 140 תווים)</div></div>
+                    <textarea class="mandatory questionText" name="alone" id="favoriteCharacter"></textarea>
 
-                    <div class="boldQuestion">איזו תכונה חלשה או שלילית מאפיינת אותך? איך זה בא לידי ביטוי? <div class="tip">(עד 240 תווים)</div></div>
-                    <textarea class="questionText" name="alone" id="worstCharacter"></textarea>
+                    <div class="boldQuestion">איזו תכונה חלשה או שלילית מאפיינת אותך? איך זה בא לידי ביטוי? <div class="tip">(עד 140 תווים)</div></div>
+                    <textarea class="mandatory questionText" name="alone" id="worstCharacter"></textarea>
 
                     <div class="boldQuestion">מ-1 עד 5, מה להערכתך היא רמת הכושר הגופני שלך? <div class="tip">(1=הכי נמוך, 5=הכי גבוה)</div></div>
                     <input class="five" type="range" name="alone" id="sportsLevel" min="1" max="5" value ="1" />
 				</div>
                 <div class="step step7">
-                    <h2>מוטיבציה</h2>
+                    <h2>מוטיבציה *</h2>
                     <div class="boldQuestion">מ-1 עד 5, עד כמה היית מעוניין/ת לשרת באחת מיחידות ההסרטה? <div class="tip">(1=הכי נמוך, 5=הכי גבוה)</div></div>
                     <input class="five" type="range" name="alone" id="serveHasrata" min="1" max="5" value ="1" />
 
                     <div class="boldQuestion">ביחס לתפקידים אחרים/יחידות אחרות בהם היית רוצה לשרת בצבא, היכן מדורגות יחידות ההסרטה?</div>
                     <div class="checkboxes">
-                        <input type="radio" name="motivationRadio" value="במקום הראשון"> במקום הראשון<br/>
+                        <input checked type="radio" name="motivationRadio" value="במקום הראשון"> במקום הראשון<br/>
                         <input type="radio" name="motivationRadio" value="אחד מהמקומות הראשונים"> אחד מהמקומות הראשונים<br/>
                         <input type="radio" name="motivationRadio" value="באמצע"> באמצע<br/>
                         <input type="radio" name="motivationRadio" value="לא יודע"> לא יודע<br/>
                     </div>
 
-                    <div class="boldQuestion">אני מעוניין/ת לשרת מיחידות ההסרטה כי... <div class="tip">(עד 240 תווים)</div></div>
-                    <textarea class="questionText" name="alone" id="whyServeHasrata"></textarea>
+                    <div class="boldQuestion">אני מעוניין/ת לשרת מיחידות ההסרטה כי... <div class="tip">(עד 140 תווים)</div></div>
+                    <textarea class="mandatory questionText" name="alone" id="whyServeHasrata"></textarea>
 
-                    <div class="boldQuestion">מהן ציפיותך מהשירות הצבאי באחת מיחידות ההסרטה? <div class="tip">(עד 240 תווים)</div></div>
-                    <textarea class="questionText" name="alone" id="tzipiot"></textarea>
+                    <div class="boldQuestion">מהן ציפיותך מהשירות הצבאי באחת מיחידות ההסרטה? <div class="tip">(עד 140 תווים)</div></div>
+                    <textarea class="mandatory questionText" name="alone" id="tzipiot"></textarea>
 
-                    <div class="boldQuestion">מהם חששותיך מהשירות הצבאי באחת מיחידות ההסרטה? <div class="tip">(עד 240 תווים)</div></div>
-                    <textarea class="questionText" name="alone" id="fears"></textarea>
+                    <div class="boldQuestion">מהם חששותיך מהשירות הצבאי באחת מיחידות ההסרטה? <div class="tip">(עד 140 תווים)</div></div>
+                    <textarea class="mandatory questionText" name="alone" id="fears"></textarea>
 
-                    <div class="boldQuestion">במידה ותחוש שאתה לא ממצה את כישוריך, מה תעשה? <div class="tip">(עד 240 תווים)</div></div>
-                    <textarea class="questionText" name="alone" id="whatDoIf"></textarea>
+                    <div class="boldQuestion">במידה ותחוש שאתה לא ממצה את כישוריך, מה תעשה? <div class="tip">(עד 140 תווים)</div></div>
+                    <textarea class="mandatory questionText" name="alone" id="whatDoIf"></textarea>
 
-                    <div class="boldQuestion">מה לדעתך השירות ביחידת ההסרטה יוכל להקנות לך? <div class="tip">(עד 240 תווים)</div></div>
-                    <textarea class="questionText" name="alone" id="whatWillGive"></textarea>
+                    <div class="boldQuestion">מה לדעתך השירות ביחידת ההסרטה יוכל להקנות לך? <div class="tip">(עד 140 תווים)</div></div>
+                    <textarea class="mandatory questionText" name="alone" id="whatWillGive"></textarea>
 
-                    <div class="boldQuestion">מה לדעתך תוכל לתרום במיוחד ליחידת ההסרטה? <div class="tip">(עד 240 תווים)</div></div>
-                    <textarea class="questionText" name="alone" id="whatSpecialGive"></textarea>
+                    <div class="boldQuestion">מה לדעתך תוכל לתרום במיוחד ליחידת ההסרטה? <div class="tip">(עד 140 תווים)</div></div>
+                    <textarea class="mandatory questionText" name="alone" id="whatSpecialGive"></textarea>
 				</div>
                 <div class="step step8">
                     <h2>דרג\י את הידע המקצועי שלך</h2>
@@ -660,7 +663,7 @@
                         </div>
                     </div>
 
-                    <div class="description" style="padding-top: 40px">מ-1 עד 10, דרג\י את רמת הידע והניסיון שלך בכל אחד מהתחומים הבאים (1=הכי נמוך, 10=הכי גבוה)</div>
+                    <div class="description" style="padding-top: 40px">מ-1 עד 10, דרג\י את רמת הידע והניסיון שלך בכל אחד מהתחומים הבאים (1=הכי נמוך, 10=הכי גבוה) *</div>
 
                     <div class="boldQuestion">צילום וידאו, תאורה וסאונד</div>
                     <input type="range" id="videoShoot" name="alone" min="1" max="10" value ="1" />
