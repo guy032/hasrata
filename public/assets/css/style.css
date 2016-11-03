@@ -499,7 +499,8 @@ div#imgName {
 }
 
 .warning {
-	border-color: red;
+	border: solid;
+    border-color: red;
 }
 
 .notesWidth {
