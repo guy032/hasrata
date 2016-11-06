@@ -327,6 +327,9 @@ function sendForm() {
 	form['userImg'] = $("#userImg").val().split('/').pop().split('\\').pop()
 	form['uid'] = uid
 	delete form['undefined']
+	for(i=0;i<form['portfolioFiles'].length;i++) {
+		delete form['portfolioFiles'][i]['undefined']
+	}
 	console.log(form)
 	db.ref('users/'+uid).set(form, function() {
 		changeStep(10)
