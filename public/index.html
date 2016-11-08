@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.1.4/css/ion.rangeSlider.min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.1.4/css/ion.rangeSlider.skinFlat.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/blueSlider.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
@@ -222,18 +222,21 @@
                                 <tr class="th">
                                     <td></td>
                                     <td>שם</td>
+                                    <td>יחס קרבה</td>
                                     <td>גיל</td>
                                     <td>הערות\התייחסות <div class="tip">(עד 140 תווים)</div></td>
                                 </tr>
                                 <tr>
                                     <td><img class="plusRemoveIcon remove" src="assets/img/remove.png"></td>
                                     <td><input name="name"></td>
+                                    <td><input name="relation"></td>
                                     <td><input name="age"></td>
                                     <td><textarea name="notes"></textarea>
                                 </tr>
                                 <tr class="disabled">
                                     <td><img class="plusRemoveIcon add" src="assets/img/add.png"></td>
                                     <td><input name="name"></td>
+                                    <td><input name="relation"></td>
                                     <td><input name="age"></td>
                                     <td><textarea name="notes"></textarea>
                                 </tr>
@@ -347,7 +350,7 @@
                     <div>
                         ז. אנימציה <div class="tip">(mov)</div>
                     </div>
-                    <div class="maxSizeNote">משקל כולל להעלאת כלל הקבצים עד 500MB <div class="tip">(הנך רשאי להעלות עד חמישה קבצים) *</div></div>
+                    <div class="maxSizeNote">משקל כולל להעלאת כלל הקבצים עד 500MB <div class="tip" style="font-weight: bold;">(הנך רשאי להעלות עד חמישה קבצים) *</div></div>
                     <div class="box">
                         <div class="innerBox">
                             <table class="addRemovePlugin" id="portfolioFiles">
@@ -626,7 +629,7 @@
                                     <td>תוכנה/ציוד</td>
                                     <td>זמן שימוש/היכרות</td>
                                     <td>איך למדתי (<div class="tip">(עד 140 תווים)</div></td>
-                                    <td>מה אני יועד ליישם (<div class="tip">(עד 140 תווים)</div></td>
+                                    <td>מה אני יודע ליישם (<div class="tip">(עד 140 תווים)</div></td>
                                 </tr>
                                 <tr>
                                     <td><img class="plusRemoveIcon remove" src="assets/img/remove.png"></td>
