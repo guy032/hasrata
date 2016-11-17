@@ -1,4 +1,4 @@
-/*.step {
+﻿/*.step {
     display: none !important;
 }
 .step4 {
@@ -68,8 +68,11 @@ body {
 
 .banner {
 	height: 20px;
+	height: 230px;
 	width: 100%;
 	background: url(../img/banner.jpg) no-repeat; 
+	background: url(../img/banner2.png) no-repeat; 
+	background-size: cover;
 }
 
 .logo {
