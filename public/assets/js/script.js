@@ -123,9 +123,10 @@ $(document).ready(function() {
 		$(this).closest(".addRemovePlugin").append($(this).closest('.disabled').clone().addClass('new'))
 		$(this).closest('.addRemovePlugin').find('.disabled:not(.new)').removeClass('disabled').find(".plusRemoveIcon").addClass('remove').removeClass('add').attr('src', 'assets/img/remove.png')		
 		newTr = $(this).closest('.addRemovePlugin').find('.new').removeClass('new')
-		name = newTr.find('input').attr('name')
+		//These lines create the NaN bug. I don't think that they are necessary
+		/*name = newTr.find('input').attr('name')
 		if(name !== undefined)
-			newTr.find('input').attr('name', name.split('_')[0] + (Number(name.split('_')[1]) + 1))
+			newTr.find('input').attr('name', name.split('_')[0] + (Number(name.split('_')[1]) + 1))*/
 
 	})
 

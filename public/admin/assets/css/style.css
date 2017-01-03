@@ -73,3 +73,7 @@ h5 {
 #personalImg {
     max-height: 20vh;
 }
+
+#tableUser {
+	display: block !important;
+}
