@@ -74,6 +74,10 @@ h5 {
     max-height: 20vh;
 }
 
-#tableUser {
+table {
 	display: block !important;
+}
+
+#users {
+	display: table !important;
 }
