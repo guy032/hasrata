@@ -217,7 +217,10 @@ $(document).ready(function() {
 					data: 'value',
 					defaultContent: ""
 				}
-			]
+			],
+			bPaginate: false,
+			scrollX: false,
+    		rowReorder: true
 		})
 
 		table.rows.add(rows).draw()
@@ -230,6 +233,17 @@ $(document).ready(function() {
 
 			setTimeout(function(t) {
 				data = table.row($(t)).data()
+				//Deletes all array data from the table "tableUser"
+				toDelete = []
+				$.each(data, function(index, value) {
+					if(index.match(/.*\d$/gm) && index != 'html5') {
+						toDelete.push(index)
+					}
+				})
+				for (var i = 0; i < toDelete.length; i++) {
+					delete data[toDelete[i]]
+				}
+
 				$("#personalImg").attr('src', '')
 				$("#uid").val(data.uid)
 				img = data.userImg.replace('<a href="#" class="link">', '').replace('</a>', '')
@@ -277,7 +291,9 @@ $(document).ready(function() {
 							})
 						})
 						window[index] = $("#"+index).DataTable({
-							columns: columns
+							columns: columns,
+							scrollX: false,
+							bPaginate: false
 						})
 
 						window[index].clear()

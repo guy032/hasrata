@@ -73,11 +73,3 @@ h5 {
 #personalImg {
     max-height: 20vh;
 }
-
-table {
-	display: block !important;
-}
-
-#users {
-	display: table !important;
-}
