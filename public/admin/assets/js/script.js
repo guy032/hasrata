@@ -220,6 +220,7 @@ $(document).ready(function() {
 			],
 			bPaginate: false,
 			scrollX: false,
+			scroller: false,
     		rowReorder: true
 		})
 
@@ -293,6 +294,7 @@ $(document).ready(function() {
 						window[index] = $("#"+index).DataTable({
 							columns: columns,
 							scrollX: false,
+							scroller: false,
 							bPaginate: false
 						})
 
