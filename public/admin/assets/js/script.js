@@ -13,7 +13,6 @@ $.extend(true, $.fn.dataTable.defaults, {
 	dom: 'frtip',
 	colReorder: true,
 	stateSave: true,
-	scroller: true,
 	scrollX: true,
 })
 
@@ -151,6 +150,7 @@ $(document).ready(function() {
 		table = $('#users').DataTable({
 			dom: 'Bfrtip',
 		    scrollY: '55vh',
+		    scroller: true,
 	        buttons: [
 	            'colvis',
 				'selectAll',
