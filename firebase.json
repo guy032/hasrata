@@ -9,8 +9,7 @@
         "source": "**",
         "destination": "/index.html"
       }
-    ]
-  },
+    ],
 	"headers": [{
 	    "source": "**",
 	    "headers": [{
@@ -18,4 +17,5 @@
 	        "value": "max-age=0, no-cache"
 	    }]
 	}]
+  }
 }
