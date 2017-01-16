@@ -13,6 +13,16 @@ $.extend(true, $.fn.dataTable.defaults, {
 	dom: 'frtip',
 	colReorder: true,
 	stateSave: true,
+	"stateSaveCallback": function (settings, data) {
+		// Send an Ajax request to the server with the state object
+	    $.ajax( {
+	      "url": "/state_save",
+	      "data": data,
+	      "dataType": "json",
+	      "type": "POST",
+	      "success": function () {}
+	    } );
+	},
 	scrollX: true,
 })
 
