@@ -12,17 +12,7 @@ var db = firebase.database();
 $.extend(true, $.fn.dataTable.defaults, {
 	dom: 'frtip',
 	colReorder: true,
-	stateSave: true,
-	"stateSaveCallback": function (settings, data) {
-		// Send an Ajax request to the server with the state object
-	    $.ajax( {
-	      "url": "/state_save",
-	      "data": data,
-	      "dataType": "json",
-	      "type": "POST",
-	      "success": function () {}
-	    } );
-	},
+	stateSave: false,
 	scrollX: true,
 })
 
@@ -146,7 +136,16 @@ $(document).ready(function() {
 
 		cols = [{defaultContent: ""}]
 		colsNoArrays = [{defaultContent: ""}]//Doesn't contain list columns like files and notes
+		specialCols = ["idNumber", "firstName", "lastName", "2units"]
 		columns = $.unique(columns)
+		$.each(specialCols, function(index, column) {
+			colsNoArrays.push({
+				title: i18n.gettext(column.replace(/[0-9]/g, '')),
+				name: column,
+				data: column,
+				defaultContent: ""
+			})
+		})
 		$.each(columns, function(index, column) {
 			if(column != 'uid') {
 				cols.push({
@@ -155,7 +154,7 @@ $(document).ready(function() {
 					data: column,
 					defaultContent: ""
 				})
-				if(!column.match(/.*\d$/gm) || column == 'html5') {
+				if((!column.match(/.*\d$/gm) || column == 'html5') && jQuery.inArray(column, specialCols) == -1) {
 					colsNoArrays.push({
 						title: i18n.gettext(column.replace(/[0-9]/g, '')),
 						name: column,
@@ -165,6 +164,7 @@ $(document).ready(function() {
 				}
 			}
 		})
+		console.log(colsNoArrays)
 		table = $('#users').DataTable({
 			dom: 'Bfrtip',
 		    scrollY: '55vh',
