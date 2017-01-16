@@ -135,6 +135,7 @@ $(document).ready(function() {
 		})
 
 		cols = [{defaultContent: ""}]
+		colsNoArrays = [{defaultContent: ""}]//Doesn't contain list columns like files and notes
 		columns = $.unique(columns)
 		$.each(columns, function(index, column) {
 			if(column != 'uid') {
@@ -144,9 +145,16 @@ $(document).ready(function() {
 					data: column,
 					defaultContent: ""
 				})
+				if(!column.match(/.*\d$/gm) || column == 'html5') {
+					colsNoArrays.push({
+						title: i18n.gettext(column.replace(/[0-9]/g, '')),
+						name: column,
+						data: column,
+						defaultContent: ""
+					})
+				}
 			}
 		})
-
 		table = $('#users').DataTable({
 			dom: 'Bfrtip',
 		    scrollY: '55vh',
@@ -199,7 +207,7 @@ $(document).ready(function() {
 	            style:    'multi',
 	            selector: 'td:first-child'
 	        },
-			columns: cols
+			columns: colsNoArrays
 		})
 
 		tableUser = $('#tableUser').DataTable({
