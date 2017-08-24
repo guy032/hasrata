@@ -1,4 +1,4 @@
-﻿/*.step {
+/*.step {
     display: none !important;
 }
 .step4 {
@@ -37,7 +37,7 @@ html, body {
 }
 
 body {
-	background: url(../img/bg.jpg) no-repeat center center fixed; 
+	background: url(../img/bg.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -70,8 +70,8 @@ body {
 	height: 20px;
 	height: 230px;
 	width: 100%;
-	background: url(../img/banner.jpg) no-repeat; 
-	background: url(../img/banner2.png) no-repeat; 
+	background: url(../img/banner.jpg) no-repeat;
+	background: url(../img/banner2.png) no-repeat;
 	background-size: cover;
 }
 
@@ -126,7 +126,7 @@ body {
 
 .progress-line .connector {
 	background-color: #949594;
-	width: 50px;
+	width: 72px;
 	height: 8px;
 	display: inline-block;
 }
@@ -158,19 +158,19 @@ body {
 
 .img.icon1 {right: -2px;}
 .img.icon2 {
-	right: 61px;
+	right: 81px;
 	background: url(../img/family-grey.png) no-repeat;
 	background-size: contain;
 	width: 50px;
 	height: 40px;
 }
 .img.icon3 {right: 145px;}
-.img.icon4 {right: 215px;}
-.img.icon5 {right: 298px;}
-.img.icon6 {right: 371px;}
-.img.icon7 {right: 448px;}
+.img.icon4 {right: 183px;}
+.img.icon5 {right: 288px;}
+.img.icon6 {right: 381px;}
+.img.icon7 {right: 479px;}
 .img.icon8 {
-	right: 523px;
+	right: 578px;
 	background: url(../img/script1-grey.png) no-repeat;
 	background-size: contain;
 	width: 30px;
@@ -183,7 +183,7 @@ body {
 	width: 32px;
 	height: 35px;
 }
-.img.icon10 {right: 675px;}
+.img.icon10 {right: 677px;}
 
 .content {
     padding: 25px 40px;
